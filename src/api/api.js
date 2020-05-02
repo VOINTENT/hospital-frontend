@@ -7,21 +7,18 @@ const instance = axios.create({
 
 export const authAPI = {
     signUp(last_name, first_name, middle_name, email, phone_number, password) {
-        return instance.post(`/entities/patients/auth/signup`)
+        return instance.post(`/entities/patients/auth/signup`, {last_name, first_name, middle_name, email, phone_number, password})
+            .then(response => response.data)
+    },
+
+    login(email_or_phone, password) {
+        return instance.post(`/entities/patients/auth/login/basic`, {email_or_phone, password})
+            .then(response => response.data);
+    },
+
+    detail() {
+        return instance.get(`/entities/patients`)
             .then(response => response.data)
     }
 
-
-    // me() {
-    //     return instance.get(`auth/me`)
-    //         .then(response => response.data)
-    // },
-    // login(email, password, rememberMe = false) {
-    //     return instance.post(`auth/login`, {email, password, rememberMe})
-    //         .then(response => response.data);
-    // },
-    // logout() {
-    //     return instance.delete(`auth/login`)
-    //         .then(response => response.data)
-    // }
 };

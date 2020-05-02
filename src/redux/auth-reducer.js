@@ -1,4 +1,5 @@
 import {authAPI} from "../api/api";
+import {sha512} from "js-sha512";
 
 const SET_USER_DATA = 'SET-USER-DATA';
 
@@ -16,7 +17,7 @@ let initialState = {
     isAuth: false
 };
 
-const signUpReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER_DATA:
             return {
@@ -29,15 +30,15 @@ const signUpReducer = (state = initialState, action) => {
     }
 };
 
-export const setUserData = (userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber, isAuth) => ({type: SET_USER_DATA, payload: {userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber, isAuth}});
+const setUserData = (userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber, isAuth) => ({type: SET_USER_DATA, payload: {userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber, isAuth}});
 
 export const getUserData = () => {
     return (dispatch) => {
-        authAPI.me()
+        authAPI.detail()
             .then(data => {
                 if (data.resultCode === 0) {
-                    let {id, login, email} = data.data;
-                    dispatch(setUserData(id, login, email, true));
+                    let {userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber} = data.data;
+                    dispatch(setUserData(userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber, true));
                 }
             });
     }
@@ -47,18 +48,47 @@ export const signup = (userId, patientId, firstName, lastName, middleName, birth
     authAPI.signUp(userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber)
         .then(data => {
             if (data.status === 0) {
-                dispatch(getUserData())
+                dispatch(setUserData(userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber, true));
             }
         })
 };
 
-// export const login = (email, password, rememberMe) => (dispatch) => {
-//     authAPI.login(email, password, rememberMe)
-//         .then(data => {
-//             if (data.resultCode === 0) {
-//                 dispatch(getAuthUserData())
-//             }
-//         })
-// };
+export const login = (email_or_phone, password) => (dispatch) => {
+    authAPI.login(email_or_phone, sha512(password))
+        .then(data => {
+            if (data.status === 0) {
+                dispatch(setUserData(
+                    data.data.user_id,
+                    data.data.patient_id,
+                    data.data.first_name,
+                    data.data.last_name,
+                    data.data.middle_name,
+                    data.data.birth_date,
+                    data.data.snils,
+                    data.data.policy,
+                    data.data.email,
+                    data.data.phone_number,
+                    true
+                ));
+            }
+        })
+};
 
-export default signUpReducer;
+export const logout = () => (dispatch) => {
+    dispatch(setUserData(
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        false
+    ))
+
+};
+
+export default authReducer;

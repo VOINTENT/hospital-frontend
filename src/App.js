@@ -1,12 +1,17 @@
 import React from "react";
-import SignUp from "./components/SignUp/SignUp";
+import './App.css';
+import HeaderContainer from "./components/Header/HeaderContainer";
+import MainContainer from "./components/Main/MainContainer";
+import NavbarContainer from "./components/Navbar/NavbarContainer";
 
 class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <SignUp/>
+            <div className="app-wrapper">
+                <HeaderContainer/>
+                <NavbarContainer/>
+                <MainContainer/>
             </div>
         );
     }
