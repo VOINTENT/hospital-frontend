@@ -1,5 +1,6 @@
 import React from "react";
 import SignUp from "./SignUp";
+import {connect} from "react-redux";
 
 
 class SignUpContainer extends React.Component {
@@ -9,4 +10,12 @@ class SignUpContainer extends React.Component {
     }
 }
 
-export default SignUpContainer;
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+});
+
+const mapDispatchToProps = (state) => {
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpContainer);
