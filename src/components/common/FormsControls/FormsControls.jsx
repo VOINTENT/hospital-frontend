@@ -15,12 +15,17 @@ const FormControl = ({input, meta, child, ...props}) => {
     );
 };
 
-export const TextArea = (props) => {
-    const {input, meta, child, ...restProps} = props;
-    return <FormControl {...props}><textarea {...input} {...restProps} /></FormControl>
-};
-
 export const Input = (props) => {
     const {input, meta, child, ...restProps} = props;
     return <FormControl {...props}><input {...input} {...restProps} /></FormControl>
+};
+
+export const Password = (props) => {
+    const {input, meta, child, ...restProps} = props;
+    return <FormControl {...props}><input {...input} {...restProps} type={'password'}/></FormControl>
+};
+
+export const Email = (props) => {
+    const {input, meta, child, ...restProps} = props;
+    return <FormControl {...props}><input {...input} {...restProps} type={'email'}/></FormControl>
 };

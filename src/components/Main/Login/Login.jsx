@@ -5,14 +5,14 @@ import {Redirect} from "react-router-dom";
 
 const Login = (props) => {
 
-    const onSubmit = (formData) => {
-        let {email_or_phone, password} = formData;
-        props.login(email_or_phone, password);
-    };
-
     if (props.isAuth) {
         return <Redirect to={"/profile"}/>
     }
+
+    const onSubmit = (formData) => {
+        let {emailOrPhone, password} = formData;
+        props.login(emailOrPhone, password);
+    };
 
     return (
         <div>
@@ -26,7 +26,7 @@ const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field placeholder={"Email или телефон"} name={"email_or_phone"} component={Input}/>
+                <Field placeholder={"Email или телефон"} name={"emailOrPhone"} component={Input}/>
             </div>
             <div>
                 <Field placeholder={"Пароль"} name={"password"} component={Input} type={"password"}/>

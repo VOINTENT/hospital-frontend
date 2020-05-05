@@ -45,13 +45,24 @@ export const getUserData = () => {
     }
 };
 
-export const signup = (userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber) => (dispatch) => {
-    authAPI.signUp(userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber)
+export const signup = (firstName, lastName, middleName, email, phoneNumber, password) => (dispatch) => {
+    authAPI.signUp(firstName, lastName, middleName, email, phoneNumber, password)
         .then(data => {
             if (data.status === 0) {
-                dispatch(setUserData(userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber, true));
+                dispatch(setUserData(
+                    data.data.user_id,
+                    data.data.patient_id,
+                    data.data.first_name,
+                    data.data.last_name,
+                    data.data.middle_name,
+                    data.data.birth_date,
+                    data.data.snils,
+                    data.data.policy,
+                    data.data.email,
+                    data.data.phone_number,
+                    true));
             }
-        })
+        });
 };
 
 export const login = (email_or_phone, password) => (dispatch) => {

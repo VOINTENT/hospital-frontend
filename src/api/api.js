@@ -7,7 +7,14 @@ const instance = axios.create({
 
 export const authAPI = {
     signUp(last_name, first_name, middle_name, email, phone_number, password) {
-        return instance.post(`entities/patients/auth/signup`, {last_name, first_name, middle_name, email, phone_number, password})
+        let bodyFormData = new FormData();
+        bodyFormData.set('last_name', last_name);
+        bodyFormData.set('first_name', first_name);
+        bodyFormData.set('middle_name', middle_name);
+        bodyFormData.set('email', email);
+        bodyFormData.set('phone_number', phone_number);
+        bodyFormData.set('password', password);
+        return instance.post(`entities/patients/auth/signup`, bodyFormData)
             .then(response => response.data)
             .catch(function (error) {
                 if (error.response) {
