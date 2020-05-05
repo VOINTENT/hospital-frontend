@@ -15,7 +15,15 @@ class ProfileContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    firstName: state.auth.firstName,
+    lastName: state.auth.lastName,
+    middleName: state.auth.middleName,
+    birthDate: state.auth.birthDate,
+    snils: state.auth.snils,
+    policy: state.auth.policy,
+    email: state.auth.email,
+    phoneNumber: state.auth.phoneNumber
 });
 
 const mapDispatchToProps = {
