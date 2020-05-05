@@ -71,24 +71,28 @@ export const login = (email_or_phone, password) => (dispatch) => {
                     true
                 ));
             }
-        })
+        });
 };
 
 export const logout = () => (dispatch) => {
-    dispatch(setUserData(
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        false
-    ))
-
+    authAPI.logout()
+        .then(data => {
+            if (data.status === 0) {
+                dispatch(setUserData(
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    false
+                ));
+            }
+        });
 };
 
 export default authReducer;

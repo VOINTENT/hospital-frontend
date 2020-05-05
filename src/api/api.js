@@ -30,6 +30,16 @@ export const authAPI = {
             })
     },
 
+    logout() {
+        return instance.delete(`/entities/patients/auth/logout`)
+            .then(response => response.data)
+            .catch(function (error) {
+                if (error.response) {
+                    return error.response.data
+                }
+            })
+    },
+
     detail() {
         return instance.get(`entities/patients`)
             .then(response => response.data)
