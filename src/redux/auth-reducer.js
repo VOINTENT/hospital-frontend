@@ -10,6 +10,7 @@ let initialState = {
     lastName: null,
     middleName: null,
     birthDate: null,
+    gender: null,
     snils: null,
     policy: null,
     email: null,
