@@ -1,0 +1,60 @@
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 15px 5;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+}
+
+input {
+    width: 100%;
+    padding: 20px;
+    margin: 1px 0 10px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+div {
+    padding: 2px;
+}
+
+p {
+    display: block;
+    font-size: 2em;
+ 	margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 30px;
+    margin-inline-end: 20px;
+}
+
+.Main_appWrapperContent__1oq7R {
+    background-color: #474e5d;;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+h1 {
+    display: block;
+    font-size: 3em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 150px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}

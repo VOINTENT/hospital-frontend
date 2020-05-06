@@ -1,6 +1,6 @@
 export const required = (value) => {
     if (value) return undefined;
-    return 'Введи поле, долбаеб!';
+    return 'Заполните поля';
 };
 
 export const maxLengthCreator = (maxLength) => {

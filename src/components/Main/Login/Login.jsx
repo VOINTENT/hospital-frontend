@@ -2,6 +2,7 @@ import React from "react";
 import {Field, reduxForm} from "redux-form";
 import {Input} from "../../common/FormsControls/FormsControls";
 import {Redirect} from "react-router-dom";
+import styles from './Login.module.css'
 
 const Login = (props) => {
 
@@ -17,6 +18,8 @@ const Login = (props) => {
     return (
         <div>
             <h1>Вход</h1>
+            <p> Пожалуйста, заполните эти поля,что бы войти в систему.</p>
+             
             <LoginReduxForm onSubmit={onSubmit}/>
         </div>
     );
