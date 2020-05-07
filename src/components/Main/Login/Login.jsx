@@ -16,9 +16,9 @@ const Login = (props) => {
     };
 
     return (
-        <div>
-            <h1>Вход</h1>
-            <p> Пожалуйста, заполните эти поля,что бы войти в систему.</p>
+        <div className={styles.div}>
+            <h1 className={styles.h1}>Вход</h1>
+            <p className={styles.p}> Пожалуйста, заполните эти поля,что бы войти в систему.</p>
              
             <LoginReduxForm onSubmit={onSubmit}/>
         </div>
@@ -28,14 +28,14 @@ const Login = (props) => {
 const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field placeholder={"Email или телефон"} name={"emailOrPhone"} component={Input}/>
+            <div className={styles.div}>
+                <Field placeholder={"Email или телефон"} name={"emailOrPhone"} component={Input} className={styles.input} />
             </div>
-            <div>
-                <Field placeholder={"Пароль"} name={"password"} component={Input} type={"password"}/>
+            <div className={styles.div}>
+                <Field placeholder={"Пароль"} name={"password"} component={Input} type={"password"} className={styles.input}/>
             </div>
-            <div>
-                <button>Вход</button>
+            <div className={styles.div}>
+                <button className={styles.button}>Вход</button>
             </div>
         </form>
     );

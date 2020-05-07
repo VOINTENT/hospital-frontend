@@ -3,6 +3,7 @@ import {Redirect} from "react-router-dom";
 import {Field, reduxForm} from "redux-form";
 import {Input, Password, Email} from "../../common/FormsControls/FormsControls";
 import {matchPassword, required} from "../../../utils/validators/validators";
+import styles from "./SignUp.module.css"
 
 const SignUp = (props) => {
 
