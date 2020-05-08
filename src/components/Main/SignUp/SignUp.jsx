@@ -3,7 +3,7 @@ import {Redirect} from "react-router-dom";
 import {Field, reduxForm} from "redux-form";
 import {Input, Password, Email} from "../../common/FormsControls/FormsControls";
 import {matchPassword, required} from "../../../utils/validators/validators";
-import styles from "./SignUp.module.css"
+import styles from "./SignUp.module.css";
 
 const SignUp = (props) => {
 
@@ -17,8 +17,8 @@ const SignUp = (props) => {
     };
 
     return (
-        <div>
-            <h3>Регистрация</h3>
+        <div className={styles.div}>
+
             <LoginReduxForm onSubmit={onSubmit}/>
         </div>
     );
@@ -27,29 +27,23 @@ const SignUp = (props) => {
 const SignUpForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field placeholder={"Фамилия"} name={"lastName"} component={Input} validate={[required]}/>
-            </div>
-            <div>
-                <Field placeholder={"Имя"} name={"firstName"} component={Input} validate={[required]}/>
-            </div>
-            <div>
-                <Field placeholder={"Отчество"} name={"middleName"} component={Input} validate={[required]}/>
-            </div>
-            <div>
-                <Field placeholder={"Email"} name={"email"} component={Email} validate={[required]}/>
-            </div>
-            <div>
-                <Field placeholder={"Номер телефона"} name={"phone_number"} component={Input} validate={[required]}/>
-            </div>
-            <div>
-                <Field placeholder={"Пароль"} name={"password"} component={Password} validate={[required]}/>
-            </div>
-            <div>
-                <Field placeholder={"Повторите пароль"} name={"confirmPassword"} component={Password} validate={[required, matchPassword]}/>
-            </div>
-            <div>
-                <button>Регистрация</button>
+            <div className={styles.dir}>
+                <h3 className={styles.h3}>Регистрация</h3>
+                <Field  className={styles.input} placeholder={"Фамилия"} name={"lastName"} component={Input} validate={[required]}/>
+
+                <Field className={styles.input} placeholder={"Имя"} name={"firstName"} component={Input} validate={[required]}/>
+
+                <Field className={styles.input} placeholder={"Отчество"} name={"middleName"} component={Input} validate={[required]}/>
+
+                <Field className={styles.input} placeholder={"Email"} name={"email"} component={Email} validate={[required]}/>
+
+                <Field  className={styles.input} placeholder={"Номер телефона"} name={"phone_number"} component={Input} validate={[required]}/>
+
+                <Field className={styles.input} placeholder={"Пароль"} name={"password"} component={Password} validate={[required]}/>
+
+                <Field  className={styles.input} placeholder={"Повторите пароль"} name={"confirmPassword"} component={Password} validate={[required, matchPassword]}/>
+
+                <button className={styles.button}>Регистрация</button>
             </div>
         </form>
     );

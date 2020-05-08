@@ -1,6 +1,9 @@
+import styles from "../../components/Main/SignUp/SignUp.module.css";
+import React from "react";
+
 export const required = (value) => {
     if (value) return undefined;
-    return 'Заполните поля';
+    return ( <h2 className={styles.span}>!</h2>)
 };
 
 export const maxLengthCreator = (maxLength) => {
@@ -14,5 +17,5 @@ export const matchPassword = (confirmPassword, allInputs) => {
     if (confirmPassword === allInputs.password) {
         return undefined;
     }
-    return 'Пароли не совпадают';
+    return ( <h2 className={styles.spar}>Пароли не совпадают. Повторите попытку</h2>)
 };
