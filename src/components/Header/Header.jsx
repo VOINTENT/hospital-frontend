@@ -2,14 +2,27 @@ import React from "react";
 import styles from './Header.module.css'
 import {NavLink} from "react-router-dom";
 
+
 const Header = (props) => {
     return (
+
         <header className={styles.header}>
-            Верхняя хрень
+
+            <img className={styles.header_img} src={require('./1.png')}/>
+
+
+            <h1 className={styles.h7}>
+                Министерство здравоохранения Республики Татарстан
+            </h1>
+            <h1 className={styles.h7}>
+                ГАУЗ «Республиканская клиническая инфекционная больница
+                                      имени профессора А.Ф.Агафонова»
+             </h1>
+
             <div className={styles.loginBlock}>
                 { props.isAuth
-                    ? <div>{props.email} - <button onClick={props.logout}>Logout</button></div>
-                    : <NavLink to={'/login'}>Login</NavLink> }
+                    ? <div>{props.email} - <button  className={styles.button5} onClick={props.logout}>Выход из системы</button></div>
+                    : <NavLink className={styles.button6} to={'/login'}>Авторизоваться</NavLink> }
             </div>
         </header>
     );
