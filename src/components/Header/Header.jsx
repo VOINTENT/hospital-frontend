@@ -19,11 +19,16 @@ const Header = (props) => {
                                       имени профессора А.Ф.Агафонова»
              </h1>
 
-            <div className={styles.loginBlock}>
+            <div >
                 { props.isAuth
-                    ? <div>{props.email} - <button  className={styles.button5} onClick={props.logout}>Выход из системы</button></div>
-                    : <NavLink className={styles.button6} to={'/login'}>Авторизоваться</NavLink> }
+                    ? <div className={styles.button5}>{props.email}  <button className={styles.button9} onClick={props.logout}>Выход из системы</button></div>
+                    : <NavLink className={styles.button6} to={'/login'}>Войти</NavLink> }
+
+                : <NavLink className={styles.button14} to={'/SignUp'}>Зарегистрироваться</NavLink>
+
+
             </div>
+
         </header>
     );
 };
