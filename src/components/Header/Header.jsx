@@ -8,7 +8,7 @@ const Header = (props) => {
 
         <header className={styles.header}>
 
-            <img className={styles.header_img} src={require('./1.png')}/>
+            <img className={styles.header_img} src={require('../../assets/images/1.png')} alt="logo"/>
 
 
             <h1 className={styles.h7}>

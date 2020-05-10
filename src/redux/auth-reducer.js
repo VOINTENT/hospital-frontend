@@ -37,7 +37,7 @@ export const getUserData = () => {
     return (dispatch) => {
         authAPI.detail()
             .then(data => {
-                if (data.status == 0) {
+                if (data.status === 0) {
                     let {user_id, patient_id, first_name, last_name, middle_name, birth_date, snils, policy, email, phone_number} = data.data;
                     dispatch(setUserData(user_id, patient_id, first_name, last_name, middle_name, birth_date, snils, policy, email, phone_number, true));
                 }
@@ -46,7 +46,7 @@ export const getUserData = () => {
 };
 
 export const signup = (firstName, lastName, middleName, email, phoneNumber, password) => (dispatch) => {
-    authAPI.signUp(firstName, lastName, middleName, email, phoneNumber, password)
+    authAPI.signUp(firstName, lastName, middleName, email, phoneNumber, sha512(password))
         .then(data => {
             if (data.status === 0) {
                 dispatch(setUserData(

@@ -1,5 +1,5 @@
 import React from "react";
-import {NavLink, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import styles from "./Main.module.css"
 import SignUpContainer from "./SignUp/SignUpContainer";
 import ProfileContainer from "./Profile/ProfileContainer";
