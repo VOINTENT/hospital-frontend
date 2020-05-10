@@ -5,15 +5,12 @@ import styles from "./Navbar.module.css"
 const Navbar = (props) => {
     return (
         <nav className={styles.nav}>
+
             <div>
-                <NavLink to={'/signup'}>Регистрация</NavLink>
+                <NavLink className={styles.button12}  to={'/profile'}>Личный кабинет</NavLink>
+                <NavLink className={styles.button13} to={'/z'}>Записаться на приём</NavLink>
             </div>
-            <div>
-                <NavLink to={'/login'}>Войти</NavLink>
-            </div>
-            <div>
-                <NavLink to={'/profile'}>Личный кабинет</NavLink>
-            </div>
+
         </nav>
     );
 };

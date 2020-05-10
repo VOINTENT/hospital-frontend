@@ -19,7 +19,7 @@ const Profile = (props) => {
 
 
     return (
-        <div className={styles.div}>
+        <div className={styles.did}>
 
             <div>
             <h3 className={styles.h4}>Личный кабинет</h3>

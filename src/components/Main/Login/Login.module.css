@@ -24,12 +24,13 @@
 .button1{
     border: none;
     cursor: pointer;
-    padding: 15px 35px ;
+    padding: 0px 20px ;
     margin: 0px 0px;
-    font-size: 0.5em;
+    font-size: 0.6em;
     border-radius:20px;
     text-align: center;
     background-color: #f8f7f7;;
+    color: black;
 
 }
 .input {
@@ -44,19 +45,23 @@
 }
 
 
-.dir {
+.dip {
     background-color: #f8f7f7;
     color: #ffffff;
     padding: 20px 100px ;
     box-sizing: border-box;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    margin: -20px 0px;
 
 
 }
-.div{
+.dia{
     background-color: #ebedf0;
     color: #fffefe;
-    padding: 100px 535px ;
+    padding: 40px 612px ;
+    margin: 0px 0px 0px;
+    position: absolute;
+    top: 220px;
 
 }
 .p{
@@ -109,13 +114,13 @@
 }
 .die{
     background-color: #f8f7f7;
-    margin-top: 16px;
-    padding: 0px ;
+    margin: 35px 0px ;
+
     text-align: center;
     background-color: #f8f7f7;
     color: #ffffff;
     box-sizing: border-box;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-    padding: 5px 250px;
+    padding: 10px 250px;
 }
 

@@ -17,7 +17,7 @@ const Login = (props) => {
     };
 
     return (
-        <div className={styles.div}>
+        <div className={styles.dia}>
 
 
 
@@ -30,7 +30,7 @@ const Login = (props) => {
 const LoginForm = (props) => {
     return (
         <form  onSubmit={props.handleSubmit}>
-            <div className={styles.dir}>
+            <div className={styles.dip}>
 
                 <h1 className={styles.h1}>Вход</h1>
 
@@ -42,7 +42,7 @@ const LoginForm = (props) => {
 
                 <button className={styles.button}>Войти</button>
 
-                <button className={styles.button1}>Забыли пароль?</button>
+                <NavLink to={'/parol'} className={styles.button1}>Забыли пароль?</NavLink>
             </div>
 
             <div  className={styles.die}>
