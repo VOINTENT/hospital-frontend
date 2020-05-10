@@ -46,7 +46,7 @@ export const getUserData = () => {
 };
 
 export const signup = (firstName, lastName, middleName, email, phoneNumber, password) => (dispatch) => {
-    authAPI.signUp(firstName, lastName, middleName, email, phoneNumber, password)
+    authAPI.signUp(firstName, lastName, middleName, email, phoneNumber, sha512(password))
         .then(data => {
             if (data.status === 0) {
                 dispatch(setUserData(
@@ -105,6 +105,15 @@ export const logout = () => (dispatch) => {
                 ));
             }
         });
+};
+
+export const restorePassword = (email) => (dispatch) => {
+    authAPI.restorePassword(email)
+        .then(data => {
+            if (data.status === 0) {
+            //    TODO
+            }
+        })
 };
 
 export default authReducer;

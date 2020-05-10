@@ -6,6 +6,7 @@ const instance = axios.create({
 });
 
 export const authAPI = {
+
     signUp(last_name, first_name, middle_name, email, phone_number, password) {
         let bodyFormData = new FormData();
         bodyFormData.set('last_name', last_name);
@@ -54,6 +55,17 @@ export const authAPI = {
                 if (error.response) {
                     return error.response.data;
                 }
+            })
+    },
+
+    restorePassword(email) {
+        let bodyFormData = new FormData();
+        bodyFormData.set('email', email);
+
+        return instance.post(`entities/patients/auth/restore-password`)
+            .then(response => response.data)
+            .catch(function (error) {
+                return error.response.data;
             })
     }
 
