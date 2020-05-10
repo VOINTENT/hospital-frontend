@@ -107,4 +107,13 @@ export const logout = () => (dispatch) => {
         });
 };
 
+export const restorePassword = (email) => (dispatch) => {
+    authAPI.restorePassword(email)
+        .then(data => {
+            if (data.status === 0) {
+            //    TODO
+            }
+        })
+};
+
 export default authReducer;

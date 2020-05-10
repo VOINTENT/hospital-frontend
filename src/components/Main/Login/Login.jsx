@@ -37,12 +37,12 @@ const LoginForm = (props) => {
                 <Field className={styles.input} placeholder={"Email или телефон"} name={"emailOrPhone"} component={Input}/>
 
 
-                <Field className={styles.input} placeholder={"Пароль"} name={"password"} component={Input} type={"password"}/>
+                <Field className={styles.input} placeholder={"Пароль"} name={"password"} component={Input}/>
 
 
                 <button className={styles.button}>Войти</button>
 
-                <NavLink to={'/parol'} className={styles.button1}>Забыли пароль?</NavLink>
+                <NavLink to={'/restore-password/send-email'} className={styles.button1}>Забыли пароль?</NavLink>
             </div>
 
             <div  className={styles.die}>
