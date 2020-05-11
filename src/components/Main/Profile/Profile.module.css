@@ -1,11 +1,12 @@
-/*лавная форма*/
+/*главная форма*/
 .did{
     background-color: #ebedf0;
     color: #fffefe;
-    padding: 3.9% 37.5% ;
-    margin: 3.8% 0% 0%;
+    padding: 0% 0% ;
+    margin:  1% 0%;
     position: absolute;
-    width: 25%;
+    width: 100%;
+    overflow:hidden;
 
 
 }
@@ -18,18 +19,19 @@
     color: black;
     box-sizing: border-box;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-    margin: 30% -100%;
-    width: 130%;
-    padding: 10% 12% ;
+    margin: 8% 5%;
+    width: 25%;
+    padding: 3% 2% ;
+    font-size:100%;
 
 }
 /*название личный кабинет*/
 .h4 {
 
-    width: 100%;
-    margin: -5% 0% -2%;
+    width: 20%;
+    margin: 2% 40% 0%;
     line-height: 160%;
-    font-size:130%;
+    font-size:170%;
     font-weight: bold;
     color: #fffefe;
     text-shadow: 0 2px #a38e8e;
@@ -43,13 +45,12 @@
 /*текст Информация*/
 .h9{
     width: 100%;
-    margin: -10% -25% -2%;
+    margin: 5% 5%;
     line-height: 160%;
-    font-size:130%;
+    font-size:140%;
     font-weight: bold;
     color: #a3a3a3;
-    text-shadow: 0 2px #000000;
+    text-shadow: 0 1px #000000;
     position: absolute;
-    top: 37%;
 
 }

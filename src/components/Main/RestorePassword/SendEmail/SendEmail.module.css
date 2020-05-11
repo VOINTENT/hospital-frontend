@@ -4,7 +4,7 @@
     background-color: #ebedf0;
     color: #fffefe;
     padding: 9.2% 37.5% ;
-    margin: 3.8% 0% 0%;
+    margin: 2% 0% 0%;
     position: absolute;
     width: 25% ;
 
@@ -19,6 +19,7 @@
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
     margin: -10% 0%;
     width: 100%;
+    font-size:120%;
 
 }
 /*ячейки*/
@@ -38,7 +39,7 @@
     background-color: #69a74e;
     box-shadow: inset 0 1px 1px #a4e388;
     border-color: #3b6e22 #3b6e22 #2c5115;
-    margin: 14% 17%;
+    margin: 8% 17%;
     font-size: 0.6em;
     width: 65%;
     opacity: 1;
@@ -55,15 +56,15 @@
 }
 /*название востановить пароль*/
 .h4 {
-    margin: -5% -8% 10%;
+    margin: -5% 0% 10%;
     line-height: 160%;
     font-size:115%;
     font-weight: bold;
     color: #fffefe;
     text-align: center;
-    text-shadow: 0 3px #a38e8e;
+    text-shadow: 0 1px #a38e8e;
     border-radius:10px;
-    width: 116%;
+    width: 100%;
 
     background-color: #3b5998;
     background-image: linear-gradient(#4e69a2, #3b5998 50%);
@@ -77,8 +78,8 @@
     border: none;
     cursor: pointer;
     padding: 0% 0% ;
-    margin: 0% 0%;
-    font-size: 0.7em;
+    margin: 0% 0.4%;
+    font-size: 0.8em;
     border-radius:20px;
     text-align: center;
     background-color: #f8f7f7;;

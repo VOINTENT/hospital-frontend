@@ -1,11 +1,23 @@
+/*главная форма*/
+.dia{
+    background-color: #ebedf0;
+    color: #fffefe;
+    padding: 3% 37.5% ;
+    margin: 2% 0% 0%;
+    position: absolute;
+    width: 25% ;
+
+
+}
 
 /*форма для ещё нет аккаунта и зарегистрируйтесь*/
 .die{
     background-color: #f8f7f7;
     color: #ffffff;
     padding: 2% 0%;
-    margin: 5.6% 115% ;
+    margin: 7% 125%;
     width: 100%;
+    font-size:150%;
 
     box-sizing: border-box;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
@@ -19,22 +31,13 @@
     padding: 10% 12% ;
     box-sizing: border-box;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-    margin: -2% 115%;
+    margin: -2% 125%;
     width: 100%;
+    font-size:150%;
 
 
 }
-/*главная форма*/
-.dia{
-    background-color: #ebedf0;
-    color: #fffefe;
-    padding: 3.9% 37.5% ;
-    margin: 3.8% 0% 0%;
-    position: absolute;
-    width: 25% ;
 
-
-}
 /*ещё нет акккаунта*/
 .p{
     border: none;
@@ -54,7 +57,7 @@
 .button2{
     background-color: #f8f7f7;
     color: #558cb7;
-    margin: 0% 31%;
+    margin: 0% 32.5%;
     font-size: 0.6em;
     border: none;
     cursor: pointer;
@@ -76,7 +79,7 @@
     font-weight: bold;
     color: #fffefe;
     text-align: center;
-    text-shadow: 0 3px #a38e8e;
+    text-shadow: 0 1px #a38e8e;
     border-radius:10px;
     width: 100%;
 
@@ -93,7 +96,7 @@
     background-color: #69a74e;
     box-shadow: inset 0 1px 1px #a4e388;
     border-color: #3b6e22 #3b6e22 #2c5115;
-    margin: 8.5% 6%;
+    margin: 8.5% 10%;
     font-size: 0.6em;
     width: 35%;
     opacity: 1;
@@ -114,7 +117,7 @@
     border: none;
     cursor: pointer;
     padding: 0% 0% ;
-    margin: 0% 0%;
+    margin: 0% 1%;
     font-size: 0.6em;
     border-radius:20px;
     text-align: center;
@@ -137,9 +140,9 @@
 
 .h9{
     width: 25%;
-    margin: -5% -35% -2%;
+    margin: -6% -35% -2%;
     line-height: 160%;
-    font-size:90%;
+    font-size:100%;
     font-weight: bold;
     color: #313030;
     text-shadow: 0 0px #000000;
@@ -148,9 +151,9 @@
 }
 .h10{
     width: 25%;
-    margin: -5% -35% -2%;
+    margin: -6% -35% -2%;
     line-height: 160%;
-    font-size:90%;
+    font-size:100%;
     font-weight: bold;
     color: #313030;
     text-shadow: 0 0px #000000;
@@ -159,9 +162,9 @@
 }
 .h11{
     width: 25%;
-    margin: -5% -5% -2%;
+    margin: -6% -5% -2%;
     line-height: 160%;
-    font-size:90%;
+    font-size:100%;
     font-weight: bold;
     color: #313030;
     text-shadow: 0 0px #000000;
@@ -171,9 +174,9 @@
 .h12{
 
     width: 25%;
-    margin: -5% -5% -2%;
+    margin: -6% -5% -2%;
     line-height: 160%;
-    font-size:90%;
+    font-size:100%;
     font-weight: bold;
     color: #313030;
     text-shadow: 0 0px #000000;
@@ -184,7 +187,7 @@
     width: 40%;
     margin: -7% -35% -2%;
     line-height: 160%;
-    font-size:170%;
+    font-size:240%;
     font-weight: bold;
     color: #313030;
     text-shadow: 0 0px #000000;
@@ -193,28 +196,28 @@
 }
 
 .header_img2{
-    margin: 1% -36% -5%;
-    width: 5%;
+    margin: 0% -35% -5%;
+    width: 4%;
     position: absolute;
     top: 24%;
 }
 .header_img3{
-    margin: 1% -6% -5%;
-    width: 5%;
+    margin: 0% -5% -5%;
+    width: 4%;
     position: absolute;
     top: 54%;
 }
 
 .header_img4{
-    margin: 1% -6% -5%;
-    width: 5%;
+    margin: 0% -5% -5%;
+    width: 4%;
     position: absolute;
     top: 24%;
 
 }
 .header_img5{
-    margin: 1% -36% -5%;
-    width: 5%;
+    margin: 0% -35% -5%;
+    width: 4%;
     position: absolute;
     top: 54%;
 }
