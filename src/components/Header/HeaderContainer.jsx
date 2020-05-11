@@ -18,12 +18,14 @@ class HeaderContainer extends React.Component {
 
 const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
-    email: state.auth.email
+    email: state.auth.email,
+
 });
 
 const mapDispatchToProps = {
     getUserData,
     logout
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);

@@ -3,6 +3,7 @@ import {Email} from "../../../common/FormsControls/FormsControls";
 import {required} from "../../../../utils/validators/validators";
 import {Field, reduxForm} from "redux-form";
 import {Redirect, withRouter} from "react-router-dom";
+import styles from "./SendEmail.module.css";
 
 const SendEmail = (props) => {
 
@@ -17,9 +18,8 @@ const SendEmail = (props) => {
     };
 
     return (
-        <div>
-            <h2>Восстановить пароль</h2>
-            <h3>Введите ваш email</h3>
+        <div className={styles.dig}>
+
             <RestorePasswordReduxForm onSubmit={onSubmit}/>
         </div>
     );
@@ -28,9 +28,13 @@ const SendEmail = (props) => {
 const RestorePasswordForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field placeholder={"Email"} name={"email"} component={Email} validate={[required]}/>
-            <button>Отправить письмо</button>
-        </form>
+            <div className={styles.din}>
+            <h2 className={styles.h4}>Восстановить пароль</h2>
+            <h3 className={styles.h5}>Введите ваш email:</h3>
+            <Field className={styles.input3} placeholder={"Email"} name={"email"} component={Email} validate={[required]}/>
+            <button className={styles.button21}>Отправить письмо</button>
+            </div>
+            </form>
     );
 };
 

@@ -30,15 +30,27 @@ const Login = (props) => {
 const LoginForm = (props) => {
     return (
         <form  onSubmit={props.handleSubmit}>
+            <div>
+                <img className={styles.header_img2} src={require('../../../assets/images/2.png')} alt="logo"/>
+                <img className={styles.header_img3} src={require('../../../assets/images/3.png')} alt="logo"/>
+                <img className={styles.header_img4} src={require('../../../assets/images/4.png')} alt="logo"/>
+                <img className={styles.header_img5} src={require('../../../assets/images/5.png')} alt="logo"/>
+                <h2 className={styles.h13}>Ваш личный кабинет</h2>
+                <h2 className={styles.h10}>Оплата сервиса банковской картой</h2>
+                <h2 className={styles.h11}>Просмотр анализов</h2>
+                <h2 className={styles.h12}>Возможность записаться на приём</h2>
+                <h2 className={styles.h9}>Получить 5% скидки при использование приложения</h2>
+            </div>
             <div className={styles.dip}>
 
                 <h1 className={styles.h1}>Вход</h1>
+
 
                 <Field className={styles.input} placeholder={"Email или телефон"} name={"emailOrPhone"} component={Input}/>
 
 
 
-                <Field className={styles.input} placeholder={"Пароль"} name={"password"} component={Input} type={"password"}/>
+
 
                 <Field className={styles.input} placeholder={"Пароль"} name={"password"} component={Input}/>
 
@@ -47,7 +59,7 @@ const LoginForm = (props) => {
                 <button className={styles.button}>Войти</button>
 
 
-                <NavLink to={'/parol'} className={styles.button1}>Забыли пароль?</NavLink>
+
 
                 <NavLink to={'/restore-password/send-email'} className={styles.button1}>Забыли пароль?</NavLink>
 

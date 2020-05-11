@@ -1,14 +1,15 @@
+/*лавная форма*/
 .did{
     background-color: #ebedf0;
     color: #fffefe;
-    padding: 50px 700px ;
-    margin: 3px 0px;
+    padding: 3.9% 37.5% ;
+    margin: 3.8% 0% 0%;
     position: absolute;
-    top: 215px;
+    width: 25%;
 
 
 }
-
+/*форма для параметров*/
 .diy{
     background-color: #f8f7f7;
 
@@ -17,25 +18,38 @@
     color: black;
     box-sizing: border-box;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-    padding: 20px 40px;
-    margin:30px -500px 90px;
-    width: 550px;
+    margin: 30% -100%;
+    width: 130%;
+    padding: 10% 12% ;
 
 }
+/*название личный кабинет*/
 .h4 {
 
-    width: 210%;
-    margin: 0px 10px 90px;
-    line-height: 80px;
-    font-size:60px;
+    width: 100%;
+    margin: -5% 0% -2%;
+    line-height: 160%;
+    font-size:130%;
     font-weight: bold;
     color: #fffefe;
-    text-align: center;
     text-shadow: 0 2px #a38e8e;
-    border-radius:15px;
+    border-radius:10px;
     background-color: #3b5998;
     background-image: linear-gradient(#4e69a2, #3b5998 50%);
     border-bottom: 1px solid #133783;
-    padding: 0px 0px;
+    text-align: center;
+
+}
+/*текст Информация*/
+.h9{
+    width: 100%;
+    margin: -10% -25% -2%;
+    line-height: 160%;
+    font-size:130%;
+    font-weight: bold;
+    color: #a3a3a3;
+    text-shadow: 0 2px #000000;
+    position: absolute;
+    top: 37%;
 
 }

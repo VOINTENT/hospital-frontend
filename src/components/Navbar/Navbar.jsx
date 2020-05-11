@@ -6,10 +6,19 @@ const Navbar = (props) => {
     return (
         <nav className={styles.nav}>
 
+
             <div>
-                <NavLink className={styles.button12}  to={'/profile'}>Личный кабинет</NavLink>
-                <NavLink className={styles.button13} to={'/z'}>Записаться на приём</NavLink>
+                {props.isAuth
+                    ? <NavLink className={styles.button12} to={'/profile'}>Личный кабинет</NavLink>
+                    : <div></div>
+
+                }
+                {props.isAuth
+                    ? <NavLink className={styles.button13} to={'/z'}>Записаться на приём</NavLink>
+                    : <div></div>
+                }
             </div>
+
 
         </nav>
     );

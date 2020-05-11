@@ -1,14 +1,103 @@
 
+/*форма для ещё нет аккаунта и зарегистрируйтесь*/
+.die{
+    background-color: #f8f7f7;
+    color: #ffffff;
+    padding: 2% 0%;
+    margin: 5.6% 115% ;
+    width: 100%;
+
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+
+}
+
+/*форма для кнопки войти и ячейки, забыли пароль*/
+.dip {
+    background-color: #f8f7f7;
+    color: #ffffff;
+    padding: 10% 12% ;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    margin: -2% 115%;
+    width: 100%;
+
+
+}
+/*главная форма*/
+.dia{
+    background-color: #ebedf0;
+    color: #fffefe;
+    padding: 3.9% 37.5% ;
+    margin: 3.8% 0% 0%;
+    position: absolute;
+    width: 25% ;
+
+
+}
+/*ещё нет акккаунта*/
+.p{
+    border: none;
+    padding: 0% 0%;
+    width: 100%;
+    margin: -1% 0%;
+    font-size: 0.6em;
+    text-align: center;
+    color: black;
+
+
+
+
+}
+
+/*зарегистрируйтесь*/
+.button2{
+    background-color: #f8f7f7;
+    color: #558cb7;
+    margin: 0% 31%;
+    font-size: 0.6em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 1;
+    padding: 0% 0%;
+
+
+
+
+}
+
+
+/*вход*/
+.h1 {
+    margin: -5% 0% -2%;
+    line-height: 160%;
+    font-size:130%;
+    font-weight: bold;
+    color: #fffefe;
+    text-align: center;
+    text-shadow: 0 3px #a38e8e;
+    border-radius:10px;
+    width: 100%;
+
+    background-color: #3b5998;
+    background-image: linear-gradient(#4e69a2, #3b5998 50%);
+    border-bottom: 1px solid #133783;
+
+
+}
+
+/*войти*/
 .button {
     background: linear-gradient(#67ae55, #578843);
     background-color: #69a74e;
     box-shadow: inset 0 1px 1px #a4e388;
     border-color: #3b6e22 #3b6e22 #2c5115;
-    margin: 40px 10px;
+    margin: 8.5% 6%;
     font-size: 0.6em;
-    width: 45%;
+    width: 35%;
     opacity: 1;
-    padding: 10px 10px;
+    padding: 3% ;
     border: 1px solid;
     border-radius: 5px;
     color: #fff;
@@ -20,12 +109,12 @@
 
 
 }
-
+/*забыли пароль*/
 .button1{
     border: none;
     cursor: pointer;
-    padding: 0px 20px ;
-    margin: 0px 0px;
+    padding: 0% 0% ;
+    margin: 0% 0%;
     font-size: 0.6em;
     border-radius:20px;
     text-align: center;
@@ -33,94 +122,99 @@
     color: black;
 
 }
+/*ячейки*/
 .input {
     width: 90%;
-    padding: 20px;
-    margin: 35px 0 -10px 0;
+    padding: 5%;
+    margin: 9% 0 -4% ;
     background: #ffffff;
     border-radius:15px;
     text-align: center;
-    font-size: 20px;
-
-}
-
-
-.dip {
-    background-color: #f8f7f7;
-    color: #ffffff;
-    padding: 20px 100px ;
-    box-sizing: border-box;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-    margin: -20px 0px;
-
-
-}
-.dia{
-    background-color: #ebedf0;
-    color: #fffefe;
-    padding: 40px 612px ;
-    margin: 0px 0px 0px;
-    position: absolute;
-    top: 220px;
-
-}
-.p{
-    border: none;
-    padding: 10px 0px;
-    margin: -10px -70px;
-    font-size: 0.6em;
-    text-align: center;
-    color: black;
-
+    font-size: 0.7em;
 
 
 }
 
-
-.button2{
-    background-color: #f8f7f7;
-    color: #558cb7;
-    margin: 0px -70px;
-    font-size: 0.6em;
-    border: none;
-    cursor: pointer;
-    width: 240%;
-    opacity: 1;
-    border-radius:0px;
-    padding: 0px 35px;
-
-
-
-
-}
-
-
-
-.h1 {
-    margin: 10px 0px -10px;
-    line-height: 85px;
-    font-size:50px;
+.h9{
+    width: 25%;
+    margin: -5% -35% -2%;
+    line-height: 160%;
+    font-size:90%;
     font-weight: bold;
-    color: #fffefe;
-    text-align: center;
-    text-shadow: 0 3px #a38e8e;
-    border-radius:10px;
+    color: #313030;
+    text-shadow: 0 0px #000000;
+    position: absolute;
+    top: 84%;
+}
+.h10{
+    width: 25%;
+    margin: -5% -35% -2%;
+    line-height: 160%;
+    font-size:90%;
+    font-weight: bold;
+    color: #313030;
+    text-shadow: 0 0px #000000;
+    position: absolute;
+    top: 55%;
+}
+.h11{
+    width: 25%;
+    margin: -5% -5% -2%;
+    line-height: 160%;
+    font-size:90%;
+    font-weight: bold;
+    color: #313030;
+    text-shadow: 0 0px #000000;
+    position: absolute;
+    top: 55%;
+}
+.h12{
 
-    background-color: #3b5998;
-    background-image: linear-gradient(#4e69a2, #3b5998 50%);
-    border-bottom: 1px solid #133783;
+    width: 25%;
+    margin: -5% -5% -2%;
+    line-height: 160%;
+    font-size:90%;
+    font-weight: bold;
+    color: #313030;
+    text-shadow: 0 0px #000000;
+    position: absolute;
+    top: 84%;
+}
+.h13{
+    width: 40%;
+    margin: -7% -35% -2%;
+    line-height: 160%;
+    font-size:170%;
+    font-weight: bold;
+    color: #313030;
+    text-shadow: 0 0px #000000;
+    position: absolute;
+    top: 23%;
+}
 
+.header_img2{
+    margin: 1% -36% -5%;
+    width: 5%;
+    position: absolute;
+    top: 24%;
+}
+.header_img3{
+    margin: 1% -6% -5%;
+    width: 5%;
+    position: absolute;
+    top: 54%;
+}
+
+.header_img4{
+    margin: 1% -6% -5%;
+    width: 5%;
+    position: absolute;
+    top: 24%;
 
 }
-.die{
-    background-color: #f8f7f7;
-    margin: 35px 0px ;
-
-    text-align: center;
-    background-color: #f8f7f7;
-    color: #ffffff;
-    box-sizing: border-box;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-    padding: 10px 250px;
+.header_img5{
+    margin: 1% -36% -5%;
+    width: 5%;
+    position: absolute;
+    top: 54%;
 }
-

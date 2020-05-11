@@ -29,21 +29,21 @@ const SignUpForm = (props) => {
         <form onSubmit={props.handleSubmit}>
             <div className={styles.dir}>
                 <h3 className={styles.h3}>Регистрация</h3>
-                <Field  className={styles.input} placeholder={"Фамилия"} name={"lastName"} component={Input} validate={[required]}/>
+                <Field  className={styles.input1} placeholder={"Фамилия"} name={"lastName"} component={Input} validate={[required]}/>
 
-                <Field className={styles.input} placeholder={"Имя"} name={"firstName"} component={Input} validate={[required]}/>
+                <Field className={styles.input1} placeholder={"Имя"} name={"firstName"} component={Input} validate={[required]}/>
 
-                <Field className={styles.input} placeholder={"Отчество"} name={"middleName"} component={Input} validate={[required]}/>
+                <Field className={styles.input1} placeholder={"Отчество"} name={"middleName"} component={Input} validate={[required]}/>
 
-                <Field className={styles.input} placeholder={"Email"} name={"email"} component={Email} validate={[required]}/>
+                <Field className={styles.input1} placeholder={"Email"} name={"email"} component={Email} validate={[required]}/>
 
-                <Field  className={styles.input} placeholder={"Номер телефона"} name={"phone_number"} component={Input} validate={[required]}/>
+                <Field  className={styles.input1} placeholder={"Номер телефона"} name={"phone_number"} component={Input} validate={[required]}/>
 
-                <Field className={styles.input} placeholder={"Пароль"} name={"password"} component={Password} validate={[required]}/>
+                <Field className={styles.input1} placeholder={"Пароль"} name={"password"} component={Password} validate={[required]}/>
 
-                <Field  className={styles.input} placeholder={"Повторите пароль"} name={"confirmPassword"} component={Password} validate={[required, matchPassword]}/>
+                <Field  className={styles.input1} placeholder={"Повторите пароль"} name={"confirmPassword"} component={Password} validate={[required, matchPassword]}/>
 
-                <button className={styles.button}>Регистрация</button>
+                <button className={styles.button15}>Регистрация</button>
             </div>
         </form>
     );
