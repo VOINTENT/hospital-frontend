@@ -24,6 +24,13 @@ const Profile = (props) => {
             <div>
             <h3 className={styles.h4}>Личный кабинет</h3>
         <h2 className={styles.h9}>Информация:</h2>
+                <h2 className={styles.hh1}>Данные записи</h2>
+                <h3 className={styles.hh2}>Группа услуг</h3>
+                <h3 className={styles.hh3}>Врач</h3>
+            </div>
+            <div>
+                <button className={styles.button100}>Скачать анализы</button>
+                <button className={styles.button100}>Загрузить анализы</button>
             </div>
 
         <div className={styles.diy}>

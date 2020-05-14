@@ -43,7 +43,7 @@ const SignUpForm = (props) => {
 
                 <Field  className={styles.input1} placeholder={"Повторите пароль"} name={"confirmPassword"} component={Password} validate={[required, matchPassword]}/>
 
-                <button className={styles.button15}>Регистрация</button>
+                <button className={styles.button15  }>Регистрация</button>
             </div>
         </form>
     );
