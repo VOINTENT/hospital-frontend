@@ -8,13 +8,15 @@ import styles from "./SignUp.module.css";
 const SignUp = (props) => {
 
     if (props.isAuth) {
-        return <Redirect to={"/profile"}/>
+        return <Redirect to={"/edit"}/>
     }
 
     const onSubmit = (formData) => {
         let {lastName, firstName, middleName, email, phone_number, password} = formData;
         props.signup(lastName, firstName, middleName, email, phone_number, password);
     };
+
+
 
     return (
         <div className={styles.div}>
@@ -43,7 +45,7 @@ const SignUpForm = (props) => {
 
                 <Field  className={styles.input1} placeholder={"Повторите пароль"} name={"confirmPassword"} component={Password} validate={[required, matchPassword]}/>
 
-                <button className={styles.button15  }>Регистрация</button>
+                <button className={styles.button15 }>Регистрация</button>
             </div>
         </form>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 import styles from "./Profile.module.css";
 
 const Profile = (props) => {
@@ -24,14 +24,9 @@ const Profile = (props) => {
             <div>
             <h3 className={styles.h4}>Личный кабинет</h3>
         <h2 className={styles.h9}>Информация:</h2>
-                <h2 className={styles.hh1}>Данные записи</h2>
-                <h3 className={styles.hh2}>Группа услуг</h3>
-                <h3 className={styles.hh3}>Врач</h3>
             </div>
-            <div>
-                <button className={styles.button100}>Скачать анализы</button>
-                <button className={styles.button100}>Загрузить анализы</button>
-            </div>
+
+
 
         <div className={styles.diy}>
             Имя: {props.firstName ? props.firstName : NOT_ENTER} <br/>
@@ -43,6 +38,7 @@ const Profile = (props) => {
             Полис: {props.policy ? props.policy : NOT_ENTER} <br/>
             Email: {props.email ? props.email : NOT_ENTER} <br/>
             Номер телефона: {props.phoneNumber ? props.phoneNumber : NOT_ENTER} <br/>
+            <NavLink to={'/Edit'} className={styles.button27}>Редактировать</NavLink>
         </div>
         </div>
 
