@@ -5,6 +5,7 @@ import SignUpContainer from "./SignUp/SignUpContainer";
 import ProfileContainer from "./Profile/ProfileContainer";
 import LoginContainer from "./Login/LoginContainer";
 import RestorePassword from "./RestorePassword/RestorePassword";
+import AppointmentContainer from "./Appointment/AppointmentContainer";
 
 const Main = (props) => {
 
@@ -13,6 +14,7 @@ const Main = (props) => {
             <Route path="/signup" render={ () => <SignUpContainer/>}/>
             <Route path="/login" render={ () => <LoginContainer/>}/>
             <Route path="/profile" render={ () => <ProfileContainer/>}/>
+            <Route path="/appointment" render={ () => <AppointmentContainer/>}/>
             <Route path="/restore-password" render={ () => <RestorePassword/>}/>
         </div>
     );

@@ -14,7 +14,7 @@ const Navbar = (props) => {
 
                 }
                 {props.isAuth
-                    ? <NavLink className={styles.button13} to={'/z'}>Записаться на приём</NavLink>
+                    ? <NavLink className={styles.button13} to={'/appointment'}>Записаться на приём</NavLink>
                     : <div></div>
                 }
             </div>

@@ -31,7 +31,7 @@ const Header = (props) => {
             <div>
                 { props.isAuth
                     ? <div> </div>
-                :<NavLink className={styles.button14} to={'/SignUp'}>Зарегистрироваться</NavLink>}
+                :<NavLink className={styles.button14} to={'/signUp'}>Зарегистрироваться</NavLink>}
         </div>
 
         </header>
