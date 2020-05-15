@@ -1,6 +1,5 @@
 import React from "react";
 import Edit from "./Edit";
-import {edit} from "../../../../redux/auth-reducer";
 import {connect} from "react-redux";
 
 
@@ -25,6 +24,7 @@ const mapStateToProps = (state) => ({
     snils: state.auth.snils,
     policy: state.auth.policy,
     email: state.auth.email,
+    gender: state.auth.gender,
     phoneNumber: state.auth.phoneNumber
 });
 

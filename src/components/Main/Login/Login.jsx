@@ -10,11 +10,7 @@ const Login = (props) => {
     if (props.isAuth) {
         return <Redirect to={"/profile"}/>
 
-
-
     }
-
-
         const onSubmit = (formData) => {
         let {emailOrPhone, password} = formData;
         props.login(emailOrPhone, password);

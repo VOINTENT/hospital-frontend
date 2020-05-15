@@ -8,15 +8,13 @@ import styles from "./SignUp.module.css";
 const SignUp = (props) => {
 
     if (props.isAuth) {
-        return <Redirect to={"/edit"}/>
+        return <Redirect to={"/profile"}/>
     }
 
     const onSubmit = (formData) => {
         let {lastName, firstName, middleName, email, phone_number, password} = formData;
         props.signup(lastName, firstName, middleName, email, phone_number, password);
     };
-
-
 
     return (
         <div className={styles.div}>
