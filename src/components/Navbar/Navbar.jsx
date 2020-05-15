@@ -7,7 +7,7 @@ const Navbar = (props) => {
         <nav className={styles.nav}>
 
 
-            <div>
+
                 {props.isAuth
                     ? <NavLink className={styles.button12} to={'/profile'}>Личный кабинет</NavLink>
                     : <div></div>
@@ -17,7 +17,7 @@ const Navbar = (props) => {
                     ? <NavLink className={styles.button13} to={'/appointment'}>Записаться на приём</NavLink>
                     : <div></div>
                 }
-            </div>
+
 
 
         </nav>

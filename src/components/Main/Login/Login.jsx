@@ -9,9 +9,13 @@ const Login = (props) => {
 
     if (props.isAuth) {
         return <Redirect to={"/profile"}/>
+
+
+
     }
 
-    const onSubmit = (formData) => {
+
+        const onSubmit = (formData) => {
         let {emailOrPhone, password} = formData;
         props.login(emailOrPhone, password);
     };
@@ -35,7 +39,7 @@ const LoginForm = (props) => {
                 <img className={styles.header_img3} src={require('../../../assets/images/3.png')} alt="logo"/>
                 <img className={styles.header_img4} src={require('../../../assets/images/4.png')} alt="logo"/>
                 <img className={styles.header_img5} src={require('../../../assets/images/5.png')} alt="logo"/>
-                <h2 className={styles.h13}>Ваш личный кабинет</h2>
+                <h1 className={styles.h13}>Ваш личный кабинет</h1>
                 <h2 className={styles.h10}>Оплата сервиса банковской картой</h2>
                 <h2 className={styles.h11}>Просмотр анализов</h2>
                 <h2 className={styles.h12}>Возможность записаться на приём</h2>

@@ -1,0 +1,42 @@
+/*главная форма*/
+.dik{
+    background-color: #ebedf0;
+    color: #fffefe;
+    padding: 3% 37.5% ;
+    margin: 2% 0% 0%;
+    position: absolute;
+    width: 25% ;
+
+
+}
+/*форма для кнопок и ячеек*/
+.dib{
+    background-color: #f8f7f7;
+    color: #1c1b1b;
+    padding: 2% 0%;
+    margin: 7% 10%;
+    width: 100%;
+    font-size:150%;
+
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+
+}
+
+/*ячейки*/
+.input3 {
+    width: 60%;
+    padding: 5%;
+    margin: 7% 0 -8% ;
+    background: #ffffff;
+    border-radius:15px;
+    text-align: center;
+    font-size: 0.5em;
+
+
+
+}
+/*редактировать*/
+.hh3{
+
+}
