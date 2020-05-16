@@ -1,20 +1,22 @@
 .header {
     background: #fdffff;
     grid-area: h;
-    overflow:hidden;/*для убирания скролл*/
-    margin: 0% 0% 0%;
+
+    margin: 0%  4%;
     padding: 0% 0%;
+    width: 100%;
+
 
 
 }
 .header_img{
-    margin: 1% 0.5% -5%;
-    width: 14% ;
+    margin: 0% -3% -7%;
+    width: 19% ;
 }
 /*текст*/
 .h7{
-
-    margin: 0.7% 15% 0% ;
+    width: 100%;
+    margin: 0.7% 18%  ;
     line-height: 100%;
     font-size:100%;
     color: #131212;
@@ -43,7 +45,7 @@
     text-decoration: none;
     letter-spacing: 10%;
     text-shadow: 0 1% 2% rgba(0,0,0,.5);
-    margin: -2.5% 88%;
+    margin: -2.5% 86%;
     font-size: 0.8em;
     width: auto;
     opacity: 1;
@@ -61,39 +63,63 @@
     background-color: #69a74e;
     box-shadow: inset 0 1px 1px #a4e388;
     border-color: #3b6e22 #3b6e22 #2c5115;
-    border: 1px solid;
-    border-radius: 15px;
-    color: #ffffff;
+    font-weight: bold;
+
     cursor: pointer;
     display: inline-block;
     text-decoration: none;
     letter-spacing: 1%;
     position: relative;
-    text-shadow: 0 1% 2% rgba(0,0,0,.5);
     margin: 5% 0%;
-    font-size: 0.9em;
-    width: 90%;
+    font-size: 0.8em;
+    width: 103%;
     opacity: 1;
     padding: 2% 0%;
     text-align: center;
 
 
+    border-radius:10px;
+    overflow: hidden;
+    line-height: 20px;
+    color: #fffefe;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Тahoma, sans-serif;
+
+    transition: box-shadow 0.3s, transform 0.3s;
+
 }
+.button9:hover,
+.button9:active,
+.button9:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    color: #FFF;
+}
+.button9:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, rgba(191, 226, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+.button9:hover:before,
+.button9:active:before,
+.button9:focus:before {
+    left: 100%;
+}
+
+
+
 /*войти*/
 .button6{
-
-    background: linear-gradient(#67ae55, #578843);
-    background-color: #69a74e;
-    box-shadow: inset 0 1px 1px #a4e388;
-    border-color: #3b6e22 #3b6e22 #2c5115;
-    border: 2px solid;
-    border-radius: 10px;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    letter-spacing: 1px;
-    position: relative;
-    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+             background: linear-gradient(#67ae55, #578843);
+             background-color: #69a74e;
+             box-shadow: inset 0 1px 1px #a4e388;
+             border-color: #3b6e22 #3b6e22 #2c5115;
     text-decoration: none;
     margin: 0% 90%;
     font-size: 1em;
@@ -103,31 +129,107 @@
     text-align: center;
     position: absolute;
     top: 17%;
+
+
+
+
+             cursor: pointer;
+             display: inline-block;
+             letter-spacing: 1px;
+             font-weight: bold;
+
+             border-radius:10px;
+             overflow: hidden;
+             line-height: 20px;
+             color: #fffefe;
+             text-shadow: 0 1px 2px rgba(0,0,0,.5);
+             text-transform: uppercase;
+             font-family: 'Roboto Condensed', Тahoma, sans-serif;
+
+             transition: box-shadow 0.3s, transform 0.3s;
+
+         }
+.button6:hover,
+.button6:active,
+.button6:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    color: #FFF;
 }
+.button6:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, rgba(191, 226, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+.button6:hover:before,
+.button6:active:before,
+.button6:focus:before {
+    left: 100%;
+}
+
+
+
 /*Зарегистрироваться*/
 .button14{
-    background: linear-gradient(#67ae55, #578843);
-    background-color: #69a74e;
-    box-shadow: inset 0 1px 1px #a4e388;
-    border-color: #3b6e22 #3b6e22 #2c5115;
-    border: 2px solid;
-    border-radius: 10px;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    letter-spacing: 1px;
-    position: relative;
-    text-shadow: 0 1px 2px rgba(0,0,0,.5);
-    text-decoration: none;
-    margin: -2% 74.5%;
-    font-size: 1em;
-    width: 15%;
-    opacity: 1;
-    padding: 0.8% 0%;
-    text-align: center;
-    position: absolute;
-    top: 21.3%;
+              background: linear-gradient(#67ae55, #578843);
+              background-color: #69a74e;
+              box-shadow: inset 0 1px 1px #a4e388;
+              border-color: #3b6e22 #3b6e22 #2c5115;
+              text-decoration: none;
+        margin: -2% 72%;
+              font-size: 1em;
+             width: 17%;
+              opacity: 1;
+              padding: 0.8% 0%;
+              text-align: center;
+              position: absolute;
+                top: 21.3%;
 
 
 
+
+              cursor: pointer;
+              display: inline-block;
+              letter-spacing: 1px;
+              font-weight: bold;
+
+              border-radius:10px;
+              overflow: hidden;
+              line-height: 20px;
+              color: #fffefe;
+              text-shadow: 0 1px 2px rgba(0,0,0,.5);
+              text-transform: uppercase;
+              font-family: 'Roboto Condensed', Тahoma, sans-serif;
+
+              transition: box-shadow 0.3s, transform 0.3s;
+
+          }
+.button14:hover,
+.button14:active,
+.button14:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    color: #FFF;
 }
+.button14:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, rgba(191, 226, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+.button14:hover:before,
+.button14:active:before,
+.button14:focus:before {
+    left: 100%;
+}
+
+

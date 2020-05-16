@@ -110,7 +110,7 @@ let initialState = {
                 name: 'Получить пизды'
             },
             date: '25-02-12',
-            time: '12:00'
+            time: '13:00'
         }
     ]
 };

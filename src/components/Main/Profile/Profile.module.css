@@ -3,7 +3,7 @@
     background-color: #ebedf0;
     color: #fffefe;
     padding: 0% 0% ;
-    margin:  1% 0%;
+    margin:  2% 0%;
     position: absolute;
     width: 100%;
     overflow:hidden;
@@ -56,25 +56,66 @@
 }
 /*Редактировать*/
 .button27{
-    background: linear-gradient(#67ae55, #578843);
-    background-color: #69a74e;
-    box-shadow: inset 0 1px 1px #a4e388;
-    border-color: #3b6e22 #3b6e22 #2c5115;
+
     border: 2px solid;
     border-radius: 10px;
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
     letter-spacing: 1px;
-
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
     text-decoration: none;
-    margin: 50px 60px;
+    margin: 0px 0px;
+
+
+}
+.button27{
+    background: linear-gradient(#67ae55, #578843);
+    background-color: #69a74e;
+    box-shadow: inset 0 1px 1px #a4e388;
+    border-color: #3b6e22 #3b6e22 #2c5115;
     font-size: 0.8em;
-    width: 10%;
+    width: 12%;
     opacity: 1;
     padding: 1% 0%;
     text-align: center;
     position: absolute;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin:4% 3%;
+    border-radius:10px;
+    overflow: hidden;
+    line-height: 20px;
+    color: #fffefe;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Тahoma, sans-serif;
 
+    transition: box-shadow 0.3s, transform 0.3s;
+
+}
+.button27:hover,
+.button27:active,
+.button27:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    color: #FFF;
+}
+.button27:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, rgba(191, 226, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+.button27:hover:before,
+.button27:active:before,
+.button27:focus:before {
+    left: 100%;
 }

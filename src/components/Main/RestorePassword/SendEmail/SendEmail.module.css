@@ -39,6 +39,17 @@
     background-color: #69a74e;
     box-shadow: inset 0 1px 1px #a4e388;
     border-color: #3b6e22 #3b6e22 #2c5115;
+    font-weight: bold;
+
+   ;
+
+
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 1%;
+    position: relative;
+
     margin: 8% 17%;
     font-size: 0.6em;
     width: 65%;
@@ -46,6 +57,54 @@
     padding: 3% ;
     border: 1px solid;
     border-radius: 5px;
+
+
+
+    text-align: center;
+
+
+
+    overflow: hidden;
+    line-height: 20px;
+    color: #fffefe;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Тahoma, sans-serif;
+
+    transition: box-shadow 0.3s, transform 0.3s;
+
+}
+.button21:hover,
+.button21:active,
+.button21:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    color: #FFF;
+}
+.button21:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, rgba(191, 226, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+.button21:hover:before,
+.button21:active:before,
+.button21:focus:before {
+    left: 100%;
+}
+
+
+/*
+.button21{
+    background: linear-gradient(#67ae55, #578843);
+    background-color: #69a74e;
+    box-shadow: inset 0 1px 1px #a4e388;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+
     color: #fff;
     cursor: pointer;
     display: inline-block;
@@ -53,7 +112,7 @@
     position: relative;
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
 
-}
+}*/
 /*название востановить пароль*/
 .h4 {
     margin: -5% 0% 10%;

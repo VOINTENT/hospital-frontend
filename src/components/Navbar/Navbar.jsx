@@ -4,6 +4,7 @@ import styles from "./Navbar.module.css"
 
 const Navbar = (props) => {
     return (
+        <div className={styles.all1}>
         <nav className={styles.nav}>
 
 
@@ -14,13 +15,14 @@ const Navbar = (props) => {
 
                 }
                 {props.isAuth
-                    ? <NavLink className={styles.button13} to={'/appointment'}>Записаться на приём</NavLink>
+                    ? <NavLink className={styles.button13} to={'/appointment'}>Записаться на прием</NavLink>
                     : <div></div>
                 }
 
 
 
         </nav>
+        </div>
     );
 };
 
