@@ -191,33 +191,29 @@ export const getDoctorsData = () => {
     }
 };
 
-
-
 const setServicesData = (services) => ({type: SET_SERVICES_DATA, services: services});
 
 export const getServicesData = () => {
     return (dispatch) => {
-        authAPI.detail()
+        authAPI.services()
             .then(data => {
                 if (data.status === 0) {
-                    let {serviceId, name} = data.data;
-                    dispatch(setServicesData(serviceId, name));
+                    let services = data.data.map(service => ({id: service.id, name: service.name}));
+                    dispatch(setServicesData(services));
                 }
             });
     }
 };
 
-
-
-const setSpecialtiesData = (servicesId, name) => ({type: SET_SPECIALTIES_DATA, payload: {servicesId, name}});
+const setSpecialtiesData = (specialties) => ({type: SET_SPECIALTIES_DATA, specialties: specialties});
 
 export const getSpecialtiesData = () => {
     return (dispatch) => {
-        authAPI.detail()
+        authAPI.serviceCategories()
             .then(data => {
                 if (data.status === 0) {
-                    let {servicesId, name} = data.data;
-                    dispatch(setSpecialtiesData(servicesId, name));
+                    let specialties = data.data.map(specialty => ({id: specialty.id, name: specialty.name}));
+                    dispatch(setSpecialtiesData(specialties));
                 }
             });
     }

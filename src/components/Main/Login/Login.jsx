@@ -14,7 +14,6 @@ const Login = (props) => {
     const onSubmit = (formData) => {
         let {emailOrPhone, password} = formData;
         props.login(emailOrPhone, password);
-        // props.history.push('/profile')
     };
 
     return (
