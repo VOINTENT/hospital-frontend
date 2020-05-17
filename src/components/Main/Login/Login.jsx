@@ -39,7 +39,7 @@ const LoginForm = (props) => {
                 <h2 className={styles.h10}>Оплата сервиса банковской картой</h2>
                 <h2 className={styles.h11}>Просмотр анализов</h2>
                 <h2 className={styles.h12}>Возможность записаться на приём</h2>
-                <h2 className={styles.h9}>Получить 5% скидки при использование приложения</h2>
+                <h2 className={styles.h9}>Получить 15% скидки на первое посещение при использование мобильного приложения</h2>
             </div>
             <div className={styles.dip}>
 
