@@ -6,7 +6,6 @@ const Profile = (props) => {
 
     if (!props.isAuth) {
         return <Redirect to="/login"/>
-
     }
 
     const NOT_ENTER = 'Не указан';

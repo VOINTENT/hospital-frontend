@@ -86,7 +86,7 @@ export const authAPI = {
             })
     },
 
-    service() {
+    serviceCategories() {
         return instance.get(`/entities/service_categories`)
             .then(response => response.data)
             .catch(function (error) {
