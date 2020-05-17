@@ -1,4 +1,5 @@
 import {authAPI} from "../api/api";
+import React from "react";
 
 const UPDATE_CURRENT_DOCTOR = 'update-current-doctor';
 const UPDATE_CURRENT_SPECIALTY = 'update-current-specialty';
@@ -7,10 +8,10 @@ const UPDATE_CURRENT_START_DATE = 'update-current-start-date';
 const UPDATE_CURRENT_FINISH_DATE = 'update-current-finish-date';
 const UPDATE_CURRENT_START_TIME = 'update-current-start-time';
 const UPDATE_CURRENT_FINISH_TIME = 'update-current-finish-time';
-const SAVE_CURRENT_DOCTORS = 'update-current-doctor';
-const SAVE_CURRENT_SPECIALTY = 'update-current-specialty';
-const SAVE_CURRENT_SERVICE = 'update-current-service';
 
+const SET_DOCTORS_DATA = 'SET-DOCTORS-DATA';
+const SET_SPECIALTIES_DATA = 'SET-SPECIALTY-DATA';
+const SET_SERVICES_DATA = 'SET-SERVICE-DATA';
 
 
 let initialState = {
@@ -70,20 +71,20 @@ const appointmentReducer = (state = initialState, action) => {
                 currentServiceId: action.currentServiceId
             };
 
-        case SAVE_CURRENT_DOCTORS:
+        case SET_DOCTORS_DATA:
             return {
                 ...state,
-                doctors: action.payload
+                doctors: state.doctors + action.doctors
             };
-        case SAVE_CURRENT_SPECIALTY:
+        case SET_SPECIALTIES_DATA:
             return {
                 ...state,
-                specialty: action.payload
+                specialty: state.specialties + action.specialties
             };
-        case SAVE_CURRENT_SERVICE:
+        case SET_SERVICES_DATA:
             return {
                 ...state,
-                service: action.payload
+                service: state.services + action.services
             };
 
         case UPDATE_CURRENT_START_DATE:
@@ -174,49 +175,49 @@ export const updateCurrentStartTime = (currentStartTime) => (dispatch) => {
 export const updateCurrentFinishTime = (currentFinishTime) => (dispatch) => {
     dispatch(updateCurrentFinishTimeDispatch(currentFinishTime))
 };
-const SET_DOCTORS_DATA = 'SET-DOCTORS-DATA';
 
-const setDoctorsData = (doctorId, firstName, lastName, middleName) => ({type: SET_DOCTORS_DATA, payload: {doctorId, firstName, lastName, middleName}});
+const setDoctorsData = (doctors) => ({type: SET_DOCTORS_DATA, doctors: doctors});
 
 export const getDoctorsData = () => {
     return (dispatch) => {
-        authAPI.detail()
+        authAPI.doctors()
             .then(data => {
                 if (data.status === 0) {
-                    let {doctor_id, first_name, last_name, middle_name} = data.data;
-                    dispatch(setDoctorsData(doctor_id, first_name, last_name, middle_name));
+
+                    let doctors = data.data.map(doctor => ({id: doctor.id, name: doctor.last_name + ' ' + doctor.first_name + ' ' + doctor.middle_name}));
+                    dispatch(setDoctorsData(doctors));
                 }
             });
     }
 };
 
-const SET_SERVICE_DATA = 'SET-SERVICE-DATA';
 
-const setServiceData = (serviceId, name) => ({type: SET_SERVICE_DATA, payload: {serviceId, name}});
 
-export const getServiceData = () => {
-    return (dispatch) => {
-        authAPI.detail()
-            .then(data => {
-                if (data.status === 0) {
-                    let {serviceId, name} = data.data;
-                    dispatch(setServiceData(serviceId, name));
-                }
-            });
-    }
-};
-
-const SET_SERVICES_DATA = 'SET-SERVICE-DATA';
-
-const setServicesData = (servicesId, name) => ({type: SET_SERVICES_DATA, payload: {servicesId, name}});
+const setServicesData = (services) => ({type: SET_SERVICES_DATA, services: services});
 
 export const getServicesData = () => {
     return (dispatch) => {
         authAPI.detail()
             .then(data => {
                 if (data.status === 0) {
+                    let {serviceId, name} = data.data;
+                    dispatch(setServicesData(serviceId, name));
+                }
+            });
+    }
+};
+
+
+
+const setSpecialtiesData = (servicesId, name) => ({type: SET_SPECIALTIES_DATA, payload: {servicesId, name}});
+
+export const getSpecialtiesData = () => {
+    return (dispatch) => {
+        authAPI.detail()
+            .then(data => {
+                if (data.status === 0) {
                     let {servicesId, name} = data.data;
-                    dispatch(setServicesData(servicesId, name));
+                    dispatch(setSpecialtiesData(servicesId, name));
                 }
             });
     }

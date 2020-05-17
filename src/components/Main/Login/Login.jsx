@@ -1,7 +1,7 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
 import {Input} from "../../common/FormsControls/FormsControls";
-import {NavLink, Redirect} from "react-router-dom";
+import {NavLink, Redirect, withRouter} from "react-router-dom";
 import styles from './Login.module.css'
 
 
@@ -9,11 +9,12 @@ const Login = (props) => {
 
     if (props.isAuth) {
         return <Redirect to={"/profile"}/>
-
     }
-        const onSubmit = (formData) => {
+
+    const onSubmit = (formData) => {
         let {emailOrPhone, password} = formData;
         props.login(emailOrPhone, password);
+        // props.history.push('/profile')
     };
 
     return (
@@ -79,4 +80,5 @@ const LoginForm = (props) => {
 
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm);
 
-export default Login;
+export default withRouter(Login);
+// export default Login;
