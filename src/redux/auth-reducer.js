@@ -2,6 +2,7 @@ import {authAPI} from "../api/api";
 import {sha512} from "js-sha512";
 
 const SET_USER_DATA = 'SET-USER-DATA';
+const UPDATE_USER_DATA = 'UPDATE-USER-DATA';
 
 let initialState = {
     userId: null,
@@ -25,24 +26,40 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 ...action.payload
             };
+        case UPDATE_USER_DATA:
+            return {
+                ...state,
+                ...action.payload
+            };
         default:
             return state
 
     }
 };
 
-const setUserData = (userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber, isAuth) => ({type: SET_USER_DATA, payload: {userId, patientId, firstName, lastName, middleName, birthDate, snils, policy, email, phoneNumber, isAuth}});
+const setUserData = (userId, patientId, firstName, lastName, middleName, gender, birthDate, snils, policy, email, phoneNumber, isAuth) => ({type: SET_USER_DATA, payload: {userId, patientId, firstName, lastName, middleName, gender, birthDate, snils, policy, email, phoneNumber, isAuth}});
+
+const updateUserDataDispatch = (firstName, lastName, middleName, gender, snils, policy, birthDate) => ({type: UPDATE_USER_DATA, payload: {firstName, lastName, middleName, gender, snils, policy, birthDate}});
 
 export const getUserData = () => {
     return (dispatch) => {
         authAPI.detail()
             .then(data => {
                 if (data.status === 0) {
-                    let {user_id, patient_id, first_name, last_name, middle_name, birth_date, snils, policy, email, phone_number} = data.data;
-                    dispatch(setUserData(user_id, patient_id, first_name, last_name, middle_name, birth_date, snils, policy, email, phone_number, true));
+                    let {user_id, patient_id, first_name, last_name, middle_name, gender, birth_date, snils, policy, email, phone_number} = data.data;
+                    dispatch(setUserData(user_id, patient_id, first_name, last_name, middle_name, gender, birth_date, snils, policy, email, phone_number, true));
                 }
             });
     }
+};
+
+export const updateUserData = (firstName, lastName, middleName, gender, snils, policy, birthDate) => (dispatch) => {
+    authAPI.update(firstName, lastName, middleName, gender, snils, policy, birthDate)
+        .then(data => {
+            if (data.status === 0) {
+                dispatch(updateUserDataDispatch(firstName, lastName, middleName, gender, snils, policy, birthDate));
+            }
+        })
 };
 
 export const signup = (firstName, lastName, middleName, email, phoneNumber, password) => (dispatch) => {

@@ -29,3 +29,8 @@ export const Email = (props) => {
     const {input, meta, child, ...restProps} = props;
     return <FormControl {...props}><input {...input} {...restProps} type={'email'}/></FormControl>
 };
+
+export const Radio = (props) => {
+    const {input, meta, child, ...restProps} = props;
+    return <FormControl {...props}><input {...input} {...restProps} checked={input.value === restProps.value} type={'radio'}/></FormControl>
+};

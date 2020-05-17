@@ -1,16 +1,21 @@
 import {Field, reduxForm} from "redux-form";
 import styles from "./Edit.module.css";
-import {Email, Input} from "../../../common/FormsControls/FormsControls";
+import {Input, Radio} from "../../../common/FormsControls/FormsControls";
 import {required} from "../../../../utils/validators/validators";
 import React from "react";
 import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
 
 const Edit = (props) => {
 
     const onSubmit = (formData) => {
-        let {lastName, firstName, middleName, email, phone_number, password} = formData;
-        props.signup(lastName, firstName, middleName, email, phone_number, password);
+        let {firstName, lastName, middleName, gender, snils, policy, birthDate} = formData;
+        if (gender === null) {
+            gender = 3
+        }
+        props.updateUserData(firstName, lastName, middleName, gender, snils, policy, birthDate);
+        props.history.push('/profile');
     };
 
     const getInitialValue = () => {
@@ -47,28 +52,34 @@ class EditForm extends React.Component {
             <form onSubmit={this.props.handleSubmit}>
                 <div className={styles.dib}>
                     <h1 className={styles.hh3}>Редактировать</h1>
-                    {/*Имя: {props.firstName ? props.firstName : NOT_ENTER} <br/>*/}
                     <Field  className={styles.input3} placeholder={"Фамилия"} name={"lastName"} component={Input} validate={[required]}/>
 
                     <Field className={styles.input3} placeholder={"Имя"} name={"firstName"} component={Input} validate={[required]}/>
 
                     <Field className={styles.input3} placeholder={"Отчество"} name={"middleName"} component={Input} validate={[required]}/><br/>
                     <label className={styles.pol}>Пол:</label><br/>
+                    {/*<div className={styles.pol1}>*/}
+                    {/*    <input id="male" name="gender" value="1" type="radio"/> мужской*/}
+                    {/*</div>*/}
+                    {/*<div className={styles.pol2}>*/}
+                    {/*    <input id="female" name="gender" value="2" type="radio"/> женский*/}
+                    {/*</div>*/}
+
                     <div className={styles.pol1}>
-                    <input id="male" name="floor" type="radio" onClick="name()"/> мужской
+                        <Field className={styles.pol1} id="male" name="gender" component={Radio} props={{ value: "1" }}/>
+                        Мужской
                     </div>
                     <div className={styles.pol2}>
-                        <input id="female" name="floor" type="radio" onClick="name()"/> женский
-                </div>
-                    <Field className={styles.input3} placeholder={"Email"} name={"email"} component={Email} validate={[required]}/>
+                        <Field className={styles.pol1} id="female" name="gender" component={Radio} props={{ value: "2" }}/>
+                        Женский
+                    </div>
 
-                    <Field  className={styles.input3} placeholder={"Номер телефона"} name={"phone_number"} component={Input} validate={[required]}/>
                     <Field  className={styles.input3} placeholder={"Снилс"} name={"snils"} component={Input} validate={[required]}/>
-                    <Field className={styles.input3} placeholder={"Полис"} name={"polis"} component={Input} validate={[required]}/>
+                    <Field className={styles.input3} placeholder={"Полис"} name={"policy"} component={Input} validate={[required]}/>
 
-                    <Field className={styles.input3} placeholder={"Дата рождения"} name={"birthday"} component={Input} validate={[required]}/>
+                    <Field className={styles.input3} placeholder={"Дата рождения"} name={"birthDate"} component={Input} validate={[required]}/>
                     <input className={styles.button30} type="submit" value="Сохранить"/>
-                    <input className={styles.button31} type="submit" value="отмена"/>
+                    <input className={styles.button31}  value="Отмена"/>
 
                 </div>
             </form>
@@ -82,4 +93,4 @@ const mapStateToProps = (state) => ({
 
 const EditReduxForm = connect(mapStateToProps)(reduxForm({form: 'edit', enableReinitialize: true})(EditForm));
 
-export default Edit;
+export default withRouter(Edit);

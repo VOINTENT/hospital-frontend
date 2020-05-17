@@ -19,6 +19,7 @@ const mapStateToProps = (state) => ({
     firstName: state.auth.firstName,
     lastName: state.auth.lastName,
     middleName: state.auth.middleName,
+    gender: state.auth.gender,
     birthDate: state.auth.birthDate,
     snils: state.auth.snils,
     policy: state.auth.policy,

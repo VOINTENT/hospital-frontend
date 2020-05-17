@@ -58,7 +58,7 @@ export const authAPI = {
             })
     },
 
-    update(last_name, first_name, middle_name, birth_date,policy,snils,gender) {
+    update(last_name, first_name, middle_name, gender, snils, policy, birth_date) {
         let bodyFormData = new FormData();
         bodyFormData.set('last_name', last_name);
         bodyFormData.set('first_name', first_name);

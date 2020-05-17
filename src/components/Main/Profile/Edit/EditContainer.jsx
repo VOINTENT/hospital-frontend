@@ -1,6 +1,7 @@
 import React from "react";
 import Edit from "./Edit";
 import {connect} from "react-redux";
+import {updateUserData} from "../../../../redux/auth-reducer";
 
 
 class EditContainer extends React.Component {
@@ -29,7 +30,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-
+    updateUserData
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditContainer);

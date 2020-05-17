@@ -19,19 +19,7 @@ let initialState = {
         {
             id: 0,
             name: 'Не выбрано'
-        },
-        {
-            id: 1,
-            name: 'Специальность1'
-        },
-        {
-            id: 2,
-            name: 'Специальность2'
-        },
-        {
-            id: 3,
-            name: 'Специальность3'
-        },
+        }
     ],
     currentSpecialtyId: '0',
 
@@ -39,19 +27,7 @@ let initialState = {
         {
             id: 0,
             name: 'Не выбрано'
-        },
-        {
-            id: 1,
-            name: 'Услуга1'
-        },
-        {
-            id: 2,
-            name: 'Услуга2'
-        },
-        {
-            id: 3,
-            name: 'Услуга3'
-        },
+        }
     ],
     currentServiceId: '0',
 
@@ -59,19 +35,7 @@ let initialState = {
         {
             id: 0,
             name: 'Не выбрано'
-        },
-        {
-            id: 1,
-            name: 'Врач1'
-        },
-        {
-            id: 2,
-            name: 'Врач2'
-        },
-        {
-            id: 3,
-            name: 'Врач3'
-        },
+        }
     ],
     currentDoctorId: '0',
 
@@ -83,41 +47,7 @@ let initialState = {
 
     current_filter: '',
 
-    registers: [
-        {
-            specialty: {
-                id: 1,
-                name: 'Наркология'
-            },
-
-            doctor: {
-                id: 1,
-                name: 'Врач1'
-            },
-            service: {
-                id: 1,
-                name: 'Получить пизды'
-            },
-            date: '25-02-12',
-            time: '12:00'
-        },
-        {
-            specialty: {
-                id: 1,
-                name: 'Наркология'
-            },
-
-            doctor: {
-                id: 1,
-                name: 'Врач1'
-            },
-            service: {
-                id: 1,
-                name: 'Получить пизды'
-            },
-            date: '25-02-12',
-        }
-    ]
+    registers: []
 };
 
 
