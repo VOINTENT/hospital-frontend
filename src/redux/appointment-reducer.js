@@ -12,6 +12,7 @@ const UPDATE_CURRENT_FINISH_TIME = 'update-current-finish-time';
 const SET_DOCTORS_DATA = 'SET-DOCTORS-DATA';
 const SET_SPECIALTIES_DATA = 'SET-SPECIALTY-DATA';
 const SET_SERVICES_DATA = 'SET-SERVICE-DATA';
+const SET_REGISTERS_DATA = 'SET-REGISTERS-DATA';
 
 
 let initialState = {
@@ -74,17 +75,17 @@ const appointmentReducer = (state = initialState, action) => {
         case SET_DOCTORS_DATA:
             return {
                 ...state,
-                doctors: state.doctors + action.doctors
+                doctors: [state.doctors.shift(), ...action.doctors]
             };
         case SET_SPECIALTIES_DATA:
             return {
                 ...state,
-                specialty: state.specialties + action.specialties
+                specialties: [state.specialties.shift(), ...action.specialties]
             };
         case SET_SERVICES_DATA:
             return {
                 ...state,
-                service: state.services + action.services
+                services: [state.services.shift(), ...action.services]
             };
 
         case UPDATE_CURRENT_START_DATE:
@@ -106,6 +107,11 @@ const appointmentReducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentFinishTime: action.currentFinishTime
+            };
+        case SET_REGISTERS_DATA:
+            return {
+                ...state,
+                registers: action.registers
             };
         default:
             return state
@@ -219,6 +225,36 @@ export const getSpecialtiesData = () => {
     }
 };
 
+const setRegistersData = (registers) => ({type: SET_REGISTERS_DATA, registers: registers});
 
+export const getRegistersData = () => {
+    return (dispatch) => {
+        authAPI.registers()
+            .then(data => {
+                if (data.status === 0) {
+                    let registers = data.data.map(register => ({
+                        id: register.id,
+                        doctor: register.doctor.last_name + ' ' + register.doctor.first_name + ' ' + register.doctor.middle_name,
+                        service: register.service.name,
+                        specialty: register.service_category.name,
+                        date: register.date,
+                        time: register.time
+                    }));
+                    dispatch(setRegistersData(registers));
+                }
+            })
+    }
+};
+
+export const addRegister = (registerId) => {
+    return (dispatch) => {
+        authAPI.addRegister(registerId)
+            .then(data => {
+                if (data.status === 0) {
+                    alert('Вы успешно записаны!')
+                }
+            })
+    }
+};
 
 export default appointmentReducer;

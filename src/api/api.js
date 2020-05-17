@@ -106,6 +106,28 @@ export const authAPI = {
             })
     },
 
+    registers() {
+        return instance.get(`/entities/reception-lines`)
+            .then(response => response.data)
+            .catch(function (error) {
+                if (error.response) {
+                    return error.response.data;
+                }
+            })
+    },
+
+    addRegister(registerId) {
+        debugger
+        let bodyFormData = new FormData();
+        bodyFormData.set('reception_line_id', registerId);
+        return instance.post(`/entities/registers`, bodyFormData)
+            .then(response => response.data)
+            .catch(function (error) {
+                if (error.response) {
+                    return error.response.data;
+                }
+            })
+    },
 
     restorePassword(email) {
         let bodyFormData = new FormData();

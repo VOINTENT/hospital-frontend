@@ -2,7 +2,7 @@ import React from "react";
 import Appointment from "./Appointment";
 import {connect} from "react-redux";
 import {
-    getDoctorsData, getServicesData, getSpecialtiesData,
+    getDoctorsData, getRegistersData, getServicesData, getSpecialtiesData,
     updateCurrentDoctor, updateCurrentFinishDate, updateCurrentFinishTime,
     updateCurrentService,
     updateCurrentSpecialty,
@@ -54,7 +54,9 @@ const mapDispatchToProps = {
 
     getDoctorsData,
     getServicesData,
-    getSpecialtiesData
+    getSpecialtiesData,
+
+    getRegistersData
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentContainer);
