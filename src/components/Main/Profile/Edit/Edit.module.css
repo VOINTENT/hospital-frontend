@@ -2,41 +2,198 @@
 .dik{
     background-color: #ebedf0;
     color: #fffefe;
-    padding: 3% 37.5% ;
+    padding: 3% 34.9% ;
     margin: 2% 0% 0%;
     position: absolute;
-    width: 25% ;
+    width: 30% ;
 
 
 }
 /*форма для кнопок и ячеек*/
 .dib{
     background-color: #f8f7f7;
-    color: #1c1b1b;
-    padding: 2% 0%;
-    margin: 7% 10%;
-    width: 100%;
-    font-size:150%;
-
+    color: #ffffff;
     box-sizing: border-box;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-
+    margin: -2% 0%;
+    width: 100%;
+    padding: 10% 12% ;
+    font-size:140%;
 }
 
 /*ячейки*/
 .input3 {
-    width: 60%;
-    padding: 5%;
-    margin: 7% 0 -8% ;
+    width: 90%;
+    padding: 5% ;
+    margin: 9% 0 -20% ;
     background: #ffffff;
     border-radius:15px;
     text-align: center;
-    font-size: 0.5em;
+    font-size: 0.7em;
+
 
 
 
 }
 /*редактировать*/
 .hh3{
+    width: 100%;
+    margin: -5% 0% -2%;
+    line-height: 160%;
+    font-size:130%;
+    font-weight: bold;
+    color: #fffefe;
+    text-align: center;
+    text-shadow: 0 2px #a38e8e;
+    border-radius:10px;
+    background-color: #3b5998;
+    background-image: linear-gradient(#4e69a2, #3b5998 50%);
+    border-bottom: 1px solid #133783;
+}
+.button30
+{background: linear-gradient(#67ae55, #578843);
+    background-color: #69a74e;
+    box-shadow: inset 0 1px 1px #a4e388;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    font-weight: bold;
 
+    margin: 10% 0%;
+    font-size: 0.6em;
+    width: 50%;
+    opacity: 1;
+    padding: 3%;
+
+    border: 1px solid;
+    border-radius: 5px;
+
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 1%;
+    position: relative;
+
+
+
+
+
+    text-align: center;
+
+
+
+    overflow: hidden;
+    line-height: 20px;
+    color: #fffefe;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Тahoma, sans-serif;
+
+    transition: box-shadow 0.3s, transform 0.3s;
+
+}
+.button30:hover,
+.button30:active,
+.button30:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    color: #FFF;
+}
+.button30:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, rgba(191, 226, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+.button30:hover:before,
+.button30:active:before,
+.button30:focus:before {
+    left: 100%;
+}
+
+
+
+
+
+
+
+.button31{background: linear-gradient(#67ae55, #578843);
+    background-color: #69a74e;
+    box-shadow: inset 0 1px 1px #a4e388;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    font-weight: bold;
+
+    margin: 0% 0%;
+    font-size: 0.6em;
+    width: 50%;
+    opacity: 1;
+    padding: 3%;
+
+    border: 1px solid;
+    border-radius: 5px;
+
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 1%;
+    position: relative;
+
+
+
+
+
+    text-align: center;
+
+
+
+    overflow: hidden;
+    line-height: 20px;
+    color: #fffefe;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Тahoma, sans-serif;
+
+    transition: box-shadow 0.3s, transform 0.3s;
+
+}
+.button31:hover,
+.button31:active,
+.button31:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    color: #FFF;
+}
+.button31:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, rgba(191, 226, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+.button31:hover:before,
+.button31:active:before,
+.button31:focus:before {
+    left: 100%;
+}
+
+.pol {
+    width: 10%;
+    margin: 0% 44%;
+    line-height: 160%;
+    font-size: 100%;
+    font-weight: bold;
+    color: #000000;
+}
+.pol1{
+    color: black;
+    margin: 0% 0% -1%;
+}
+.pol2{
+    color: black;
+    margin: 0% 0% -3%;
 }

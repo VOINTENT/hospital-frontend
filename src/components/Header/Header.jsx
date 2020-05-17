@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
     return (
-
+        <div className={styles.all1}>
         <header className={styles.header}>
 
 
@@ -34,6 +34,7 @@ const Header = (props) => {
                 :<NavLink className={styles.button14} to={'/signUp'}>Зарегистрироваться</NavLink>}
 
         </header>
+        </div>
     );
 };
 

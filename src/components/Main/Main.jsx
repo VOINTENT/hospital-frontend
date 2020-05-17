@@ -11,6 +11,7 @@ import EditContainer from "./Profile/Edit/EditContainer";
 const Main = (props) => {
 
     return (
+        <div className={styles.all1}>
         <div className={styles.appWrapperContent}>
             <Route path="/signup" render={ () => <SignUpContainer/>}/>
             <Route path="/login" render={ () => <LoginContainer/>}/>
@@ -19,6 +20,7 @@ const Main = (props) => {
             <Route path="/restore-password" render={ () => <RestorePassword/>}/>
             <Route path="/edit" render={ () => <EditContainer/>}/>
         </div>
+            </div>
     );
 };
 

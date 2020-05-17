@@ -58,6 +58,55 @@ export const authAPI = {
             })
     },
 
+    update(last_name, first_name, middle_name, birth_date,policy,snils,gender) {
+        let bodyFormData = new FormData();
+        bodyFormData.set('last_name', last_name);
+        bodyFormData.set('first_name', first_name);
+        bodyFormData.set('middle_name', middle_name);
+        bodyFormData.set('birth_date', birth_date);
+        bodyFormData.set('policy', policy);
+        bodyFormData.set('snils', snils);
+        bodyFormData.set('gender', gender);
+        return instance.patch(`/entities/patients`, bodyFormData)
+            .then(response => response.data)
+            .catch(function (error) {
+                if (error.response) {
+                    return error.response.data;
+                }
+            })
+    },
+
+    doctors() {
+        return instance.get(`/entities/doctors`)
+            .then(response => response.data)
+            .catch(function (error) {
+                if (error.response) {
+                    return error.response.data;
+                }
+            })
+    },
+
+    service() {
+        return instance.get(`/entities/service_categories`)
+            .then(response => response.data)
+            .catch(function (error) {
+                if (error.response) {
+                    return error.response.data;
+                }
+            })
+    },
+
+    services() {
+        return instance.get(`/entities/services`)
+            .then(response => response.data)
+            .catch(function (error) {
+                if (error.response) {
+                    return error.response.data;
+                }
+            })
+    },
+
+
     restorePassword(email) {
         let bodyFormData = new FormData();
         bodyFormData.set('email', email);

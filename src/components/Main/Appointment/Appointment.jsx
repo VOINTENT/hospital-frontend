@@ -14,8 +14,9 @@ const Appointment = (props) => {
 
     return (
         <div className={styles.wrapper}>
-            <h3>Запись на прием</h3>
 
+            <h1 className={styles.h30}>Запись на прием</h1>
+            <div>
             <FilterForm
                 doctors={doctors} specialties={specialties} services={services}
                 currentDoctorId={props.currentDoctorId} currentSpecialtyId={props.currentSpecialtyId} currentServiceId={props.currentServiceId}
@@ -36,7 +37,7 @@ const Appointment = (props) => {
                 <hr/>
 
             {registers}
-        </div>
+        </div> </div>
     );
 };
 
@@ -138,30 +139,45 @@ class FilterForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    Выберите врача:
-                    <select value={this.props.currentDoctorId} onChange={this.handleDoctorChange}>
+                <div className={styles.all}>
+                    <div>
+                        <img className={styles.header_img6} src={require('../../../assets/images/6.png')} alt="logo"/>
+                        <img className={styles.header_img8} src={require('../../../assets/images/6.png')} alt="logo"/>
+                        <img className={styles.header_img10} src={require('../../../assets/images/6.png')} alt="logo"/>
+                        <img className={styles.header_img7} src={require('../../../assets/images/7.png')} alt="logo"/>
+                        <img className={styles.header_img9} src={require('../../../assets/images/9.png')} alt="logo"/>
+                    </div>
+
+                <label> <div className={styles.hh9}>
+                    Выбрать врача:
+                    <select className={styles.select} value={this.props.currentDoctorId} onChange={this.handleDoctorChange}>
                         {this.props.doctors}
                     </select>
+                </div>
                 </label><br/>
 
-                <label>
-                    Выберите специальность:
-                    <select value={this.props.currentSpecialtyId} onChange={this.handleSpecialtyChange}>
+                <label><div className={styles.hh10}>
+                     Выбрать специальность:
+                    <select className={styles.select2} value={this.props.currentSpecialtyId} onChange={this.handleSpecialtyChange}>
                         {this.props.specialties}
                     </select>
+                    </div>
                 </label><br/>
 
-                <label>
-                    Выберите услугу:
-                    <select value={this.props.currentServiceId} onChange={this.handleServiceChange}>
+                <label><div className={styles.hh11}>
+
+                    Выбрать услугу:
+                    <select className={styles.select3} value={this.props.currentServiceId} onChange={this.handleServiceChange}>
                         {this.props.services}
                     </select>
+
+                </div>
                 </label><br/>
 
                 <label>
-                    Выберите промежуток даты:
-
+                    <div className={styles.ot}>
+                     Выбрать промежуток даты:
+                    <div className={styles.select4}>
                     От:
                     <DatePicker
                         locale={ru}
@@ -169,7 +185,8 @@ class FilterForm extends React.Component {
                         onChange={date => this.handleStartDateChange(date)}
                         minDate={new Date()}
                         placeholderText="От"
-                    />
+                    /></div>
+                        <div className={styles.select5}>
                     До:
                     <DatePicker
                         locale={ru}
@@ -177,13 +194,14 @@ class FilterForm extends React.Component {
                         onChange={date => this.handleFinishDateChange(date)}
                         minDate={new Date()}
                         placeholderText="До"
-                    />
-
+                    /></div>
+</div>
                 </label><br/>
 
                 <label>
-                    Выберите промежуток времени:
-
+                    <div className={styles.ot1}>
+                  Выбрать промежуток времени:
+                        <div className={styles.select6}>
                     От:
                     <DatePicker
                         locale={ru}
@@ -194,7 +212,8 @@ class FilterForm extends React.Component {
                         timeIntervals={15}
                         timeCaption="Время"
                         dateFormat="h:mm aa"
-                    />
+                    /></div>
+                        <div className={styles.select7}>
                     До:
                     <DatePicker
                         locale={ru}
@@ -205,13 +224,15 @@ class FilterForm extends React.Component {
                         timeIntervals={15}
                         timeCaption="Время"
                         dateFormat="h:mm"
-                    />
-
+                    /></div>
+                    </div>
                 </label><br/>
 
-                <button>Фильтр</button>
+                <button className={styles.button50}>Найти</button>
                 {/*<input type="submit" value="Submit" />*/}
-            </form>
+                </div>
+
+                </form>
         );
     }
 }

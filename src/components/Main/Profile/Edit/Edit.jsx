@@ -52,10 +52,14 @@ class EditForm extends React.Component {
 
                     <Field className={styles.input3} placeholder={"Имя"} name={"firstName"} component={Input} validate={[required]}/>
 
-                    <Field className={styles.input3} placeholder={"Отчество"} name={"middleName"} component={Input} validate={[required]}/>
+                    <Field className={styles.input3} placeholder={"Отчество"} name={"middleName"} component={Input} validate={[required]}/><br/>
                     <label className={styles.pol}>Пол:</label><br/>
+                    <div className={styles.pol1}>
                     <input id="male" name="floor" type="radio" onClick="name()"/> мужской
-                    <input id="female" name="floor" type="radio" onClick="name()"/> женский
+                    </div>
+                    <div className={styles.pol2}>
+                        <input id="female" name="floor" type="radio" onClick="name()"/> женский
+                </div>
                     <Field className={styles.input3} placeholder={"Email"} name={"email"} component={Email} validate={[required]}/>
 
                     <Field  className={styles.input3} placeholder={"Номер телефона"} name={"phone_number"} component={Input} validate={[required]}/>
