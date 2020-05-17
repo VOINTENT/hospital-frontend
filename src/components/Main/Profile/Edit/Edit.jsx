@@ -78,7 +78,4 @@ const mapStateToProps = (state) => ({
 
 const EditReduxForm = connect(mapStateToProps)(reduxForm({form: 'edit', enableReinitialize: true})(EditForm));
 
-// const EditReduxForm = reduxForm({form: 'edit'})(EditForm);
-// const EditReduxFormInitialize = connect(state => ({initialValues: state.auth.data}),{})(EditReduxForm);
-//
 export default Edit;
