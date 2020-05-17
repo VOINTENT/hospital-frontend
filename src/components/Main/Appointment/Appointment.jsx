@@ -3,14 +3,14 @@ import styles from './Appointment.module.css'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ru from 'date-fns/locale/ru';
-import Register from "./Register/Register";
+import RegisterContainer from "./Register/RegisterContainer";
 
 const Appointment = (props) => {
 
     let doctors = props.doctors.map(doctor => <option value={doctor.id}>{doctor.name}</option>);
     let specialties = props.specialties.map(specialty => <option value={specialty.id}>{specialty.name}</option>);
     let services = props.services.map(service => <option value={service.id}>{service.name}</option>);
-    let registers = props.registers.map(register => <Register doctor={register.doctor} service={register.service} specialty={register.specialty} date={register.date} time={register.time}/>);
+    let registers = props.registers.map(register => <RegisterContainer id={register.id} doctor={register.doctor} service={register.service} specialty={register.specialty} date={register.date} time={register.time}/>);
 
     return (
         <div className={styles.wrapper}>
@@ -32,7 +32,9 @@ const Appointment = (props) => {
                 currentStartDate={props.currentStartDate}
                 currentFinishDate={props.currentFinishDate}
                 currentStartTime={props.currentStartTime}
-                currentFinishTime={props.currentFinishTime}/>
+                currentFinishTime={props.currentFinishTime}
+
+                getRegistersData={props.getRegistersData}/>
 
                 <hr/>
 
@@ -132,7 +134,9 @@ class FilterForm extends React.Component {
             params += 'finish_time=' + this.props.currentFinishTime.getHours() + '-' + (this.props.currentFinishTime.getMinutes())
         }
 
-        alert(params);
+        // alert(params);
+        this.props.getRegistersData();
+
         event.preventDefault();
     }
 
