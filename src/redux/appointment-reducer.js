@@ -1,3 +1,5 @@
+import {authAPI} from "../api/api";
+
 const UPDATE_CURRENT_DOCTOR = 'update-current-doctor';
 const UPDATE_CURRENT_SPECIALTY = 'update-current-specialty';
 const UPDATE_CURRENT_SERVICE = 'update-current-service';
@@ -5,6 +7,10 @@ const UPDATE_CURRENT_START_DATE = 'update-current-start-date';
 const UPDATE_CURRENT_FINISH_DATE = 'update-current-finish-date';
 const UPDATE_CURRENT_START_TIME = 'update-current-start-time';
 const UPDATE_CURRENT_FINISH_TIME = 'update-current-finish-time';
+const SAVE_CURRENT_DOCTORS = 'update-current-doctor';
+const SAVE_CURRENT_SPECIALTY = 'update-current-specialty';
+const SAVE_CURRENT_SERVICE = 'update-current-service';
+
 
 
 let initialState = {
@@ -110,10 +116,11 @@ let initialState = {
                 name: 'Получить пизды'
             },
             date: '25-02-12',
-            time: '13:00'
         }
     ]
 };
+
+
 
 const appointmentReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -132,6 +139,23 @@ const appointmentReducer = (state = initialState, action) => {
                 ...state,
                 currentServiceId: action.currentServiceId
             };
+
+        case SAVE_CURRENT_DOCTORS:
+            return {
+                ...state,
+                doctors: action.payload
+            };
+        case SAVE_CURRENT_SPECIALTY:
+            return {
+                ...state,
+                specialty: action.payload
+            };
+        case SAVE_CURRENT_SERVICE:
+            return {
+                ...state,
+                service: action.payload
+            };
+
         case UPDATE_CURRENT_START_DATE:
             return {
                 ...state,
@@ -220,5 +244,54 @@ export const updateCurrentStartTime = (currentStartTime) => (dispatch) => {
 export const updateCurrentFinishTime = (currentFinishTime) => (dispatch) => {
     dispatch(updateCurrentFinishTimeDispatch(currentFinishTime))
 };
+const SET_DOCTORS_DATA = 'SET-DOCTORS-DATA';
+
+const setDoctorsData = (doctorId, firstName, lastName, middleName) => ({type: SET_DOCTORS_DATA, payload: {doctorId, firstName, lastName, middleName}});
+
+export const getDoctorsData = () => {
+    return (dispatch) => {
+        authAPI.detail()
+            .then(data => {
+                if (data.status === 0) {
+                    let {doctor_id, first_name, last_name, middle_name} = data.data;
+                    dispatch(setDoctorsData(doctor_id, first_name, last_name, middle_name));
+                }
+            });
+    }
+};
+
+const SET_SERVICE_DATA = 'SET-SERVICE-DATA';
+
+const setServiceData = (serviceId, name) => ({type: SET_SERVICE_DATA, payload: {serviceId, name}});
+
+export const getServiceData = () => {
+    return (dispatch) => {
+        authAPI.detail()
+            .then(data => {
+                if (data.status === 0) {
+                    let {serviceId, name} = data.data;
+                    dispatch(setServiceData(serviceId, name));
+                }
+            });
+    }
+};
+
+const SET_SERVICES_DATA = 'SET-SERVICE-DATA';
+
+const setServicesData = (servicesId, name) => ({type: SET_SERVICES_DATA, payload: {servicesId, name}});
+
+export const getServicesData = () => {
+    return (dispatch) => {
+        authAPI.detail()
+            .then(data => {
+                if (data.status === 0) {
+                    let {servicesId, name} = data.data;
+                    dispatch(setServicesData(servicesId, name));
+                }
+            });
+    }
+};
+
+
 
 export default appointmentReducer;
