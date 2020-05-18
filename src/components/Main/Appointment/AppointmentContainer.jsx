@@ -3,7 +3,7 @@ import Appointment from "./Appointment";
 import {connect} from "react-redux";
 import {
     getDoctorsData, getRegistersData, getServicesData, getSpecialtiesData,
-    updateCurrentDoctor, updateCurrentFinishDate, updateCurrentFinishTime,
+    updateCurrentDoctor, updateCurrentFilter, updateCurrentFinishDate, updateCurrentFinishTime,
     updateCurrentService,
     updateCurrentSpecialty,
     updateCurrentStartDate, updateCurrentStartTime
@@ -56,7 +56,7 @@ const mapDispatchToProps = {
     getServicesData,
     getSpecialtiesData,
 
-    getRegistersData
+    getRegistersData,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentContainer);

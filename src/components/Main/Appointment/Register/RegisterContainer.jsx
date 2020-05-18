@@ -19,7 +19,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-    addRegister
+    addRegister,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterContainer)
