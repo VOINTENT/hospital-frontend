@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ru from 'date-fns/locale/ru';
 import RegisterContainer from "./Register/RegisterContainer";
+import Profile from "../Profile/Profile";
 
 const Appointment = (props) => {
 
@@ -144,13 +145,14 @@ class FilterForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className={styles.all}>
-                    <div>
-                        <img className={styles.header_img6} src={require('../../../assets/images/6.png')} alt="logo"/>
+
+
+                     <img className={styles.header_img6} src={require('../../../assets/images/6.png')} alt="logo"/>
                         <img className={styles.header_img8} src={require('../../../assets/images/6.png')} alt="logo"/>
                         <img className={styles.header_img10} src={require('../../../assets/images/6.png')} alt="logo"/>
                         <img className={styles.header_img7} src={require('../../../assets/images/7.png')} alt="logo"/>
                         <img className={styles.header_img9} src={require('../../../assets/images/9.png')} alt="logo"/>
-                    </div>
+
 
                 <label> <div className={styles.hh9}>
                     Выбрать врача:

@@ -24,7 +24,12 @@ const mapStateToProps = (state) => ({
     snils: state.auth.snils,
     policy: state.auth.policy,
     email: state.auth.email,
-    phoneNumber: state.auth.phoneNumber
+    phoneNumber: state.auth.phoneNumber,
+    doctor: state.auth.doctor,
+    service: state.auth.service,
+    specialty: state.auth.specialty,
+    date: state.auth.date,
+    time: state.auth.time
 });
 
 const mapDispatchToProps = {

@@ -11,6 +11,7 @@ const Register = (props) => {
     };
 
     return (
+
         <div >
             <div className={styles.brd}>
             <div>Врач: {props.doctor}</div>

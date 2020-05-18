@@ -1,11 +1,22 @@
 import React from "react";
 import {NavLink, Redirect} from "react-router-dom";
 import styles from "./Profile.module.css";
+import RegisterContainer from "../Appointment/Register/RegisterContainer";
+
+
+
 
 const Profile = (props) => {
+    let registers = props.registers.map(register => <RegisterContainer id={register.id} doctor={register.doctor}
+                                                                      service={register.service}
+                                                                      specialty={register.specialty}
+                                                                      date={register.date} time={register.time}/>);
+
+
 
     if (!props.isAuth) {
         return <Redirect to="/login"/>
+
     }
 
     const NOT_ENTER = 'Не указан';
@@ -18,11 +29,13 @@ const Profile = (props) => {
     }
 
     return (
+
         <div className={styles.did}>
 
             <div>
                 <h3 className={styles.h4}>Личный кабинет</h3>
                 <h2 className={styles.h9}>Информация:</h2>
+                <h2 className={styles.l9}>Данные записи:</h2>
             </div>
 
 
@@ -39,7 +52,20 @@ const Profile = (props) => {
                 Номер телефона: {props.phoneNumber ? props.phoneNumber : NOT_ENTER} <br/>
                 <NavLink to={'/Edit'} className={styles.button27}>Редактировать</NavLink>
             </div>
-        </div>
+
+
+                <div className={styles.brf}>
+                    <div>Врач: {props.doctor}</div>
+                    <div>Услуга: {props.service}</div>
+                    <div>Специальность: {props.specialty}</div>
+                    <div>Дата: {props.date}</div>
+                    <div>Время: {props.time}</div>
+                    <input className={styles.button100} name={props.id}  type="submit" value="Отмена записи"/>
+                </div>
+            {registers} </div>
+
+
+
 
     )
 };
