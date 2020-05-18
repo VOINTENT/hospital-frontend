@@ -38,8 +38,6 @@ const Profile = (props) => {
                 <h2 className={styles.l9}>Данные записи:</h2>
             </div>
 
-
-
             <div className={styles.diy}>
                 Имя: {props.firstName ? props.firstName : NOT_ENTER} <br/>
                 Фамилия: {props.lastName ? props.lastName : NOT_ENTER} <br/>

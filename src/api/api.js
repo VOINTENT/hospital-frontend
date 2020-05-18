@@ -106,8 +106,8 @@ export const authAPI = {
             })
     },
 
-    registers() {
-        return instance.get(`/entities/reception-lines`)
+    registers(currentFilter) {
+        return instance.get(`/entities/reception-lines` + currentFilter)
             .then(response => response.data)
             .catch(function (error) {
                 if (error.response) {

@@ -14,6 +14,8 @@ const SET_SPECIALTIES_DATA = 'SET-SPECIALTY-DATA';
 const SET_SERVICES_DATA = 'SET-SERVICE-DATA';
 const SET_REGISTERS_DATA = 'SET-REGISTERS-DATA';
 
+const UPDATE_CURRENT_FILTER = 'UPDATE-CURRENT-FILTER';
+
 
 let initialState = {
 
@@ -47,7 +49,7 @@ let initialState = {
     currentStartTime: null,
     currentFinishTime: null,
 
-    current_filter: '',
+    currentFilter: '',
 
     registers: []
 };
@@ -112,6 +114,11 @@ const appointmentReducer = (state = initialState, action) => {
             return {
                 ...state,
                 registers: action.registers
+            };
+        case UPDATE_CURRENT_FILTER:
+            return {
+                ...state,
+                currentFilter: action.currentFilter
             };
         default:
             return state
@@ -197,6 +204,14 @@ export const getDoctorsData = () => {
     }
 };
 
+const updateCurrentFilterDispatch = (currentFilter) => {
+    return {type: UPDATE_CURRENT_FILTER, currentFilter}
+};
+
+export const updateCurrentFilter = (currentFilter) => (dispatch) => {
+    dispatch(updateCurrentFilterDispatch(currentFilter))
+};
+
 const setServicesData = (services) => ({type: SET_SERVICES_DATA, services: services});
 
 export const getServicesData = () => {
@@ -227,9 +242,9 @@ export const getSpecialtiesData = () => {
 
 const setRegistersData = (registers) => ({type: SET_REGISTERS_DATA, registers: registers});
 
-export const getRegistersData = () => {
+export const getRegistersData = (currentFilter) => {
     return (dispatch) => {
-        authAPI.registers()
+        authAPI.registers(currentFilter)
             .then(data => {
                 if (data.status === 0) {
                     let registers = data.data.map(register => ({

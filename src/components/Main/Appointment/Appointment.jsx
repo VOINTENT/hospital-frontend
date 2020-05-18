@@ -114,29 +114,29 @@ class FilterForm extends React.Component {
         if (this.props.currentStartDate !== null) {
             params += empty ? '' : '&';
             empty = false;
-            params += 'start_date=' + this.props.currentStartDate.getFullYear() + '-' + (this.props.currentStartDate.getMonth() + 1) + '-' + this.props.currentStartDate.getDate()
+            params += 'date_start=' + this.props.currentStartDate.getDate() + '-' + (this.props.currentStartDate.getMonth() + 1) + '-' + this.props.currentStartDate.getFullYear()
         }
 
         if (this.props.currentFinishDate !== null) {
             params += empty ? '' : '&';
             empty = false;
-            params += 'finish_date=' + this.props.currentFinishDate.getFullYear() + '-' + (this.props.currentFinishDate.getMonth() + 1) + '-' + this.props.currentFinishDate.getDate()
+            params += 'date_finish=' + this.props.currentFinishDate.getDate() + '-' + (this.props.currentFinishDate.getMonth() + 1) + '-' + this.props.currentFinishDate.getFullYear()
         }
 
         if (this.props.currentStartTime !== null) {
             params += empty ? '' : '&';
             empty = false;
-            params += 'start_time=' + this.props.currentStartTime.getHours() + '-' + (this.props.currentStartTime.getMinutes())
+            params += 'time_start=' + this.props.currentStartTime.getHours() + ':' + (this.props.currentStartTime.getMinutes())
         }
 
         if (this.props.currentFinishTime !== null) {
             params += empty ? '' : '&';
             empty = false;
-            params += 'finish_time=' + this.props.currentFinishTime.getHours() + '-' + (this.props.currentFinishTime.getMinutes())
+            params += 'time_finish=' + this.props.currentFinishTime.getHours() + '-' + (this.props.currentFinishTime.getMinutes())
         }
 
         // alert(params);
-        this.props.getRegistersData();
+        this.props.getRegistersData(params);
 
         event.preventDefault();
     }
