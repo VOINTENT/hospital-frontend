@@ -6,9 +6,20 @@ const Register = (props) => {
 
 
     const onClickAddRegister = (e) => {
-        props.addRegister(e.target.name);
+        if (props.type === 'cancel') {
+            props.removeRegister(e.target.name);
+        } else if (props.type === 'add') {
+            props.addRegister(e.target.name);
+        }
         props.history.push('/profile');
     };
+
+    let text = '';
+    if (props.type === 'cancel') {
+        text = 'Отменить запись';
+    } else if (props.type === 'add') {
+        text = 'Записаться';
+    }
 
     return (
 
@@ -21,7 +32,7 @@ const Register = (props) => {
             <div>Время: {props.time}</div>
         </div>
             <div>
-                <button className={styles.button40} name={props.id} onClick={onClickAddRegister}>Записаться</button>
+                <button className={styles.button40} name={props.id} onClick={onClickAddRegister}>{text}</button>
             </div>
      </div>
     );

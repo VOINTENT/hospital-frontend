@@ -1,11 +1,12 @@
 import React from "react";
 import {connect} from "react-redux";
 import Profile from "./Profile";
+import {getMyRegistersData} from "../../../redux/appointment-reducer";
 
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
-
+        this.props.getMyRegistersData()
     }
 
     render() {
@@ -25,15 +26,11 @@ const mapStateToProps = (state) => ({
     policy: state.auth.policy,
     email: state.auth.email,
     phoneNumber: state.auth.phoneNumber,
-    doctor: state.auth.doctor,
-    service: state.auth.service,
-    specialty: state.auth.specialty,
-    date: state.auth.date,
-    time: state.auth.time
+    myRegisters: state.appointment.myRegisters
 });
 
 const mapDispatchToProps = {
-
+    getMyRegistersData
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);

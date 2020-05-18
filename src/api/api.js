@@ -116,11 +116,30 @@ export const authAPI = {
             })
     },
 
+    myRegisters() {
+        return instance.get(`/entities/registers`)
+            .then(response => response.data)
+            .catch(function (error) {
+                if (error.response) {
+                    return error.response.data;
+                }
+            })
+    },
+
     addRegister(registerId) {
-        debugger
         let bodyFormData = new FormData();
         bodyFormData.set('reception_line_id', registerId);
         return instance.post(`/entities/registers`, bodyFormData)
+            .then(response => response.data)
+            .catch(function (error) {
+                if (error.response) {
+                    return error.response.data;
+                }
+            })
+    },
+
+    removeRegister(registerId) {
+        return instance.delete(`/entities/registers/` + registerId)
             .then(response => response.data)
             .catch(function (error) {
                 if (error.response) {

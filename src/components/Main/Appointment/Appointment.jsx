@@ -4,14 +4,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ru from 'date-fns/locale/ru';
 import RegisterContainer from "./Register/RegisterContainer";
-import Profile from "../Profile/Profile";
 
 const Appointment = (props) => {
 
     let doctors = props.doctors.map(doctor => <option value={doctor.id}>{doctor.name}</option>);
     let specialties = props.specialties.map(specialty => <option value={specialty.id}>{specialty.name}</option>);
     let services = props.services.map(service => <option value={service.id}>{service.name}</option>);
-    let registers = props.registers.map(register => <RegisterContainer id={register.id} doctor={register.doctor} service={register.service} specialty={register.specialty} date={register.date} time={register.time}/>);
+    let registers = props.registers.map(register => <RegisterContainer id={register.id} doctor={register.doctor} service={register.service} specialty={register.specialty} date={register.date} time={register.time} type="add"/>);
 
     return (
         <div className={styles.wrapper}>

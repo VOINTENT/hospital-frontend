@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import Register from "./Register";
-import {addRegister} from "../../../../redux/appointment-reducer";
+import {addRegister, removeRegister} from "../../../../redux/appointment-reducer";
 
 class RegisterContainer extends React.Component{
 
@@ -20,6 +20,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
     addRegister,
+    removeRegister
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterContainer)

@@ -1,5 +1,4 @@
 import {authAPI} from "../api/api";
-import React from "react";
 
 const UPDATE_CURRENT_DOCTOR = 'update-current-doctor';
 const UPDATE_CURRENT_SPECIALTY = 'update-current-specialty';
@@ -15,6 +14,8 @@ const SET_SERVICES_DATA = 'SET-SERVICE-DATA';
 const SET_REGISTERS_DATA = 'SET-REGISTERS-DATA';
 
 const UPDATE_CURRENT_FILTER = 'UPDATE-CURRENT-FILTER';
+
+const UPDATE_MY_REGISTERS = 'UPDATE-MY-REGISTERS';
 
 
 let initialState = {
@@ -51,7 +52,9 @@ let initialState = {
 
     currentFilter: '',
 
-    registers: []
+    registers: [],
+
+    myRegisters: []
 };
 
 
@@ -119,6 +122,11 @@ const appointmentReducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentFilter: action.currentFilter
+            };
+        case UPDATE_MY_REGISTERS:
+            return {
+                ...state,
+                myRegisters: action.registers
             };
         default:
             return state
@@ -272,4 +280,36 @@ export const addRegister = (registerId) => {
     }
 };
 
+export const removeRegister = (registerId) => {
+    return (dispatch) => {
+        authAPI.removeRegister(registerId)
+            .then(data => {
+                if (data.status === 0) {
+                    alert('Запись удалена!')
+                }
+            })
+    }
+};
+
 export default appointmentReducer;
+
+const setMyRegistersData = (registers) => ({type: UPDATE_MY_REGISTERS, registers: registers});
+
+export const getMyRegistersData = () => {
+    return (dispatch) => {
+        authAPI.myRegisters()
+            .then(data => {
+                if (data.status === 0) {
+                    let registers = data.data.map(register => ({
+                        id: register.id,
+                        doctor: register.doctor.last_name + ' ' + register.doctor.first_name + ' ' + register.doctor.middle_name,
+                        service: register.service.name,
+                        specialty: register.service_category.name,
+                        date: register.date,
+                        time: register.time
+                    }));
+                    dispatch(setMyRegistersData(registers));
+                }
+            })
+    }
+};

@@ -7,12 +7,11 @@ import RegisterContainer from "../Appointment/Register/RegisterContainer";
 
 
 const Profile = (props) => {
-    let registers = props.registers.map(register => <RegisterContainer id={register.id} doctor={register.doctor}
-                                                                      service={register.service}
-                                                                      specialty={register.specialty}
-                                                                      date={register.date} time={register.time}/>);
-
-
+    let registers = props.myRegisters.map(register => <RegisterContainer id={register.id} doctor={register.doctor}
+                                                                       service={register.service}
+                                                                       specialty={register.specialty}
+                                                                       date={register.date} time={register.time}
+                                                                       type="cancel"/>);
 
     if (!props.isAuth) {
         return <Redirect to="/login"/>
@@ -51,16 +50,8 @@ const Profile = (props) => {
                 <NavLink to={'/Edit'} className={styles.button27}>Редактировать</NavLink>
             </div>
 
-
-                <div className={styles.brf}>
-                    <div>Врач: {props.doctor}</div>
-                    <div>Услуга: {props.service}</div>
-                    <div>Специальность: {props.specialty}</div>
-                    <div>Дата: {props.date}</div>
-                    <div>Время: {props.time}</div>
-                    <input className={styles.button100} name={props.id}  type="submit" value="Отмена записи"/>
-                </div>
-            {registers} </div>
+            {registers}
+        </div>
 
 
 
